@@ -1,0 +1,67 @@
+Website: http://cfes.lockhartisd.org/gateway/Login.aspx?ReturnUrl=%2fcfes_staff%2finroll 
+
+
+
+
+
+Cloudflare 1000 Error
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Access denied
+You do not have access to cfes.lockhartisd.org.The site owner may have set restrictions that prevent you from accessing the site.
+
+Ray ID: 8a0936a4cb178fd8
+Timestamp: 2024-07-09 15:05:39 UTC
+Your IP address: 50.78.6.1
+Requested URL: cfes.lockhartisd.org/gateway/Login.aspx?ReturnUrl=%2Fcfes_staff%2Finroll 
+Error reference number: 1020
+Server ID: FL_106F252
+User-Agent: python-requests/2.32.1
+
+
+
+
+
+
+
+Something went wrong...
+
+      Sorry, this is not working as expected. An alert has been sent to the Finalsite team to review. They'll have us up and running again as soon as possible. 
+      
+
+        In the meantime, here are some things you can do:
+      
+
+
+
+Refresh the page (sometimes this helps)
+
+Try again in a few minutes
+
+
+Subscribe to Finalsite's status page
+
+
+View Status Page
+
+
+
+
+

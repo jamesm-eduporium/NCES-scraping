@@ -1,0 +1,11 @@
+# All scraped HTML content
+
+/all_site_text/*
+
+# All csv data
+
+/csv_files/*
+
+# All emails
+
+/emails.csv
