@@ -20,8 +20,9 @@ district maintinence, and an assortment of other reasons that result in slightly
 
 When they are run in conjunction, expect the process to take about 3.5 hours. The entire system can be ran at once by using
 the run_all.py file.
-__All data is only representative of Public Schools in the United States, and may not be the latest data.__
-__**This project was written entirely by James McGillicuddy for the sole use of Eduporium.**__
+
+_All data is only representative of Public Schools in the United States, and may not be the latest data._
+_**This project was written entirely by James McGillicuddy for the sole use of Eduporium.**_
 
 
 
@@ -53,13 +54,13 @@ Amount of Public Schools: 98,328
 (Average) Teachers per School: 38.28 (TPS)
 
 
-1. 14,955 emails / (19473 school districts * 193.3 TPSD) = 14,955 / 3,764,130.9 **0.397%**
+1. 14,955 emails / (19473 school districts * 193.3 TPSD) = _14,955 / 3,764,130.9_ = `0.397%`
 
-2. 14,955 emails / (5883 accessed school districts * 193.3 TPSD) = 14,955 / 1,137,183.9 = **1.315%**
+2. 14,955 emails / (5883 accessed school districts * 193.3 TPSD) = _14,955 / 1,137,183.9_ = `1.315%`
 
-3. 14,955 emails / (2863 school directories * 193.3 TPSD) = 14,955 / 553,417.9 = **2.702%%**
+3. 14,955 emails / (2863 school directories * 193.3 TPSD) = _14,955 / 553,417.9_ = `2.702%`
 
-4. 14,955 emails / (3895 staff directories * 38.28 TPS) = 14,955 / 125,730.6 = **11.894**
+4. 14,955 emails / (3895 staff directories * 38.28 TPS) = _14,955 / 125,730.6_ = `11.894%`
 
 All four of these numbers display different perspectives of success. The first, 0.397%, displays that the system was able
 to access about half a percent of every single possible email it could. While overarching, this number does not show much as
@@ -72,3 +73,11 @@ This gives a better insight and says that for any given school district url, exp
 The third and fourth values also give insight on the effectiveness of the system when "entered" at different steps, however
 they only display the effectiveness of part of the system rather than the whole. So while they show important information
 about individual sections of the system, I believe that the 2nd value still represents the overarching system the best.
+
+
+These small percentages represent massive wins for the system. A task like webscraping, especially using just bs4 and Selenium,
+inherently approach a limit due to the vast differences in all of the site design. At some point it becomes more efficient to
+go to each site and write down the emails by hand rather than to write scraping code so specific it cannot work for any other site.
+However, the limit has not yet been met and I will continue to attempt to increase it by accessing more schools and staff directories,
+and also having a higher html parsing success rate. LLMs and other AIs can also be used to find directories more efficiently and without
+as much fail.
