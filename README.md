@@ -27,7 +27,7 @@ __**This project was written entirely by James McGillicuddy for the sole use of 
 
 ## STATISTICS (last updated 07/09/24):
 
-Emails Accessed: 19,275
+Emails Accessed: 14,955
 
 School District Websites Found: 5883
 
@@ -53,21 +53,21 @@ Amount of Public Schools: 98,328
 (Average) Teachers per School: 38.28 (TPS)
 
 
-1. 19,275 emails / (19473 school districts * 193.3 TPSD) = **0.512%**
+1. 14,955 emails / (19473 school districts * 193.3 TPSD) = 14,955 / 3,764,130.9 **0.397%**
 
-2. 19,275 emails / (5883 accessed school districts * 193.3 TPSD) = **1.695%**
+2. 14,955 emails / (5883 accessed school districts * 193.3 TPSD) = 14,955 / 1,137,183.9 = **1.315%**
 
-3. 19,275 emails / (2863 school directories * 193.3 TPSD) = **3.483%**
+3. 14,955 emails / (2863 school directories * 193.3 TPSD) = 14,955 / 553,417.9 = **2.702%%**
 
-4. 19,275 emails / (3895 staff directories * 38.28 TPS) = **12.928**
+4. 14,955 emails / (3895 staff directories * 38.28 TPS) = 14,955 / 125,730.6 = **11.894**
 
-All four of these numbers display different perspectives of success. The first, 0.512%, displays that the system was able
+All four of these numbers display different perspectives of success. The first, 0.397%, displays that the system was able
 to access about half a percent of every single possible email it could. While overarching, this number does not show much as
 almost 75% of school districts on NCES either consisted of less than 4 schools or did not list a website. Therefore, there is
 little the system can do to improve the number of districts accessed. 
 
 Thats why the second value is much more valuable. It displays the total percentage found of all districts that could actually be accessed.
-This gives a better insight and says that for any given school district url, expect a ~1.7% success rate.
+This gives a better insight and says that for any given school district url, expect a ~1.3% success rate.
 
 The third and fourth values also give insight on the effectiveness of the system when "entered" at different steps, however
 they only display the effectiveness of part of the system rather than the whole. So while they show important information

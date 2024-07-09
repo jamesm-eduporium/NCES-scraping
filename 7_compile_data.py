@@ -40,6 +40,8 @@ def main():
         if not len(e) < 5:
             emails.append(e)
 
+    emails = set(emails)
+    emails = list(emails)
 
     with open('./emails.csv', mode='w') as file:
         writer = csv.writer(file)
