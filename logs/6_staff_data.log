@@ -1,21 +1,744 @@
-2024-07-09 11:00:35,785:ERROR:The url http://www.eastorange.k12.nj.us//apps/staff/ was not accessed, due to the following error: HTTPConnectionPool(host='www.eastorange.k12.nj.us', port=80): Max retries exceeded with url: /apps/staff/ (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x10996aa80>: Failed to resolve 'www.eastorange.k12.nj.us' ([Errno 8] nodename nor servname provided, or not known)"))
-2024-07-09 11:00:40,765:ERROR:The url http://www.medford.k12.wi.us///www.medford.k12.wi.us/district/staff-directory.cfm was not accessed, due to the following error: HTTPConnectionPool(host='www.medford.k12.wi.us', port=80): Max retries exceeded with url: /www.medford.k12.wi.us/district/staff-directory.cfm (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x109591ee0>: Failed to resolve 'www.medford.k12.wi.us' ([Errno 8] nodename nor servname provided, or not known)"))
-2024-07-09 11:02:42,730:ERROR:The url http://www.lmusd.org//apps/staff was not accessed, due to the following error: HTTPConnectionPool(host='www.luciamarschools.orgapps', port=80): Max retries exceeded with url: /staff (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x104e1e330>: Failed to resolve 'www.luciamarschools.orgapps' ([Errno 8] nodename nor servname provided, or not known)"))
-2024-07-09 11:03:18,304:ERROR:The url https://egcsd.org/goff-middle-school/staff-directory/ was not accessed, due to the following error: HTTPSConnectionPool(host='egcsd.org', port=443): Max retries exceeded with url: /goff-middle-school/staff-directory/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1096a4590>: Failed to resolve 'egcsd.org' ([Errno 8] nodename nor servname provided, or not known)"))
-2024-07-09 11:03:24,890:ERROR:The url https://staffconnect.kernhigh.org/ was not accessed, due to the following error: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
-2024-07-09 11:03:35,625:ERROR:The url https://egcsd.org/green-meadow-elementary/staff-directory/ was not accessed, due to the following error: HTTPSConnectionPool(host='egcsd.org', port=443): Max retries exceeded with url: /green-meadow-elementary/staff-directory/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1093ce360>: Failed to resolve 'egcsd.org' ([Errno 8] nodename nor servname provided, or not known)"))
-2024-07-09 11:04:28,070:ERROR:The url https://egcsd.org/donald-p-sutherland-elementary-school/staff-directory/ was not accessed, due to the following error: HTTPSConnectionPool(host='egcsd.org', port=443): Max retries exceeded with url: /donald-p-sutherland-elementary-school/staff-directory/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1047a61b0>: Failed to resolve 'egcsd.org' ([Errno 8] nodename nor servname provided, or not known)"))
-2024-07-09 11:05:17,547:ERROR:The url https://egcsd.org/genet-elementary/staff-directory/ was not accessed, due to the following error: HTTPSConnectionPool(host='egcsd.org', port=443): Max retries exceeded with url: /genet-elementary/staff-directory/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1040ee2d0>: Failed to resolve 'egcsd.org' ([Errno 8] nodename nor servname provided, or not known)"))
-2024-07-09 11:05:48,265:ERROR:The url https://egcsd.org/red-mill-elementary/staff-directory/ was not accessed, due to the following error: HTTPSConnectionPool(host='egcsd.org', port=443): Max retries exceeded with url: /red-mill-elementary/staff-directory/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1097724b0>: Failed to resolve 'egcsd.org' ([Errno 8] nodename nor servname provided, or not known)"))
-2024-07-09 11:06:02,278:ERROR:The url https://teachstaff.nysed.gov/hc/en-us/categories/202004646-Teacher-Staff-Data was not accessed, due to the following error: HTTPSConnectionPool(host='teachstaff.nysed.gov', port=443): Max retries exceeded with url: /hc/en-us/categories/202004646-Teacher-Staff-Data (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1000)')))
-2024-07-09 11:06:02,771:ERROR:The url https://jces.rvaschools.net/about-us/staff-directory was not accessed, due to the following error: HTTPSConnectionPool(host='jces.rvaschools.net', port=443): Max retries exceeded with url: /about-us/staff-directory (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x109bfc920>: Failed to resolve 'jces.rvaschools.net' ([Errno 8] nodename nor servname provided, or not known)"))
-2024-07-09 11:06:51,889:ERROR:The url https://egcsd.org/staff-resources/ was not accessed, due to the following error: HTTPSConnectionPool(host='egcsd.org', port=443): Max retries exceeded with url: /staff-resources/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10957c320>: Failed to resolve 'egcsd.org' ([Errno 8] nodename nor servname provided, or not known)"))
-2024-07-09 11:06:52,048:ERROR:The url https://www.lodi.k12.wi.us/staff1 was not accessed, due to the following error: HTTPSConnectionPool(host='www.lodi.k12.wi.us', port=443): Max retries exceeded with url: /staff1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10a561010>: Failed to resolve 'www.lodi.k12.wi.us' ([Errno 8] nodename nor servname provided, or not known)"))
-2024-07-09 11:06:58,653:ERROR:The url https://somerset-texas.devrelease.net/staff/courtney-oliver was not accessed, due to the following error: HTTPSConnectionPool(host='somerset-texas.devrelease.net', port=443): Max retries exceeded with url: /staff/courtney-oliver (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'somerset-texas.devrelease.net'. (_ssl.c:1000)")))
-2024-07-09 11:07:17,145:ERROR:The url https://egcsd.org/columbia-high-school/staff-directory/ was not accessed, due to the following error: HTTPSConnectionPool(host='egcsd.org', port=443): Max retries exceeded with url: /columbia-high-school/staff-directory/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1093cf440>: Failed to resolve 'egcsd.org' ([Errno 8] nodename nor servname provided, or not known)"))
-2024-07-09 11:07:24,690:ERROR:The url https://aacs.net/staff/ was not accessed, due to the following error: HTTPSConnectionPool(host='aacs.net', port=443): Max retries exceeded with url: /staff/ (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'aacs.net'. (_ssl.c:1000)")))
-2024-07-09 11:08:16,519:ERROR:The url https://egcsd.org/bell-top-elementary/staff-directory/ was not accessed, due to the following error: HTTPSConnectionPool(host='egcsd.org', port=443): Max retries exceeded with url: /bell-top-elementary/staff-directory/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10a3f3500>: Failed to resolve 'egcsd.org' ([Errno 8] nodename nor servname provided, or not known)"))
-2024-07-09 11:08:30,754:ERROR:The url http://hsws03/staffevalsystem was not accessed, due to the following error: HTTPConnectionPool(host='hsws03', port=80): Max retries exceeded with url: /staffevalsystem (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x10b02aae0>: Failed to resolve 'hsws03' ([Errno 8] nodename nor servname provided, or not known)"))
-2024-07-09 11:08:42,723:ERROR:The url https://somerset-texas.devrelease.net/staff/robert-mike-jones was not accessed, due to the following error: HTTPSConnectionPool(host='somerset-texas.devrelease.net', port=443): Max retries exceeded with url: /staff/robert-mike-jones (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'somerset-texas.devrelease.net'. (_ssl.c:1000)")))
-2024-07-09 11:08:45,721:ERROR:The url http://dexterr9mo.apptegy.us/o/dexter-high-school/staff was not accessed, due to the following error: HTTPSConnectionPool(host='dexterr9mo.apptegy.us', port=443): Max retries exceeded with url: /o/dexter-high-school/staff (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'dexterr9mo.apptegy.us'. (_ssl.c:1000)")))
-2024-07-09 11:08:47,056:ERROR:The url https://motleyelementary.mesquiteisd.org//staff-directory was not accessed, due to the following error: HTTPSConnectionPool(host='motleyelementary.mesquiteisd.org', port=443): Max retries exceeded with url: /staff-directory (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x104526240>: Failed to resolve 'motleyelementary.mesquiteisd.org' ([Errno 8] nodename nor servname provided, or not known)"))
+2024-07-11 13:03:29,562:ERROR:Error clicking next button at https://adams.holliston.k12.ma.us/directory: list index out of range
+2024-07-11 13:03:34,517:ERROR:Error clicking next button at http://lhs.lowell.k12.ma.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:03:39,117:ERROR:Error clicking next button at http://jces.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:03:43,305:ERROR:Error clicking next button at http://kfes.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:03:49,419:ERROR:Error clicking next button at https://mhs.beaver.k12.ut.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:03:54,918:ERROR:Error clicking next button at http://vdmes.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:03:58,883:ERROR:Error clicking next button at http://mail.google.com/a/attala.k12.ms.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:04:04,286:ERROR:Error clicking next button at https://wces.washington.kyschools.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:04:35,832:ERROR:Error clicking next button at https://high.mboro.k12.ky.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:04:39,850:ERROR:Error clicking next button at http://tbpes.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:04:44,515:ERROR:Error clicking next button at https://mms.monticello.k12.mn.us/directory: list index out of range
+2024-07-11 13:04:48,383:ERROR:Error clicking next button at http://cyes.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:04:53,390:ERROR:Error clicking next button at http://ncms.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:04:57,241:ERROR:Error clicking next button at http://rcms.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:05:01,258:ERROR:Error clicking next button at http://bves.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:05:06,278:ERROR:Error clicking next button at http://dsms.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:05:11,991:ERROR:Error clicking next button at https://nmms.nm.k12.in.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:05:17,511:ERROR:Error clicking next button at https://phes.nm.k12.in.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:05:19,937:ERROR:Error clicking next button at https://mhs.monticello.k12.mn.us/directory: list index out of range
+2024-07-11 13:05:23,889:ERROR:Error clicking next button at http://bwes.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:05:27,664:ERROR:Error clicking next button at http://sses.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:05:33,064:ERROR:Error clicking next button at https://lbses.nm.k12.in.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:05:37,490:ERROR:Error clicking next button at http://cces.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:05:42,373:ERROR:Error clicking next button at https://hewes.tustin.k12.ca.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:05:47,263:ERROR:Error clicking next button at http://www.etsd.k12.ms.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:05:53,501:ERROR:Error clicking next button at https://nmhs.nm.k12.in.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:06:00,364:ERROR:Error clicking next button at http://aces.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:06:05,090:ERROR:Error clicking next button at http://phms.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:06:14,542:ERROR:Error clicking next button at https://bhs.breathitt.k12.ky.us/directory: list index out of range
+2024-07-11 13:06:21,046:ERROR:Error clicking next button at http://rves.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:06:26,328:ERROR:Error clicking next button at https://wcms.washington.kyschools.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:06:31,231:ERROR:Error clicking next button at http://dhshs.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:06:35,494:ERROR:Error clicking next button at http://dles.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:06:40,480:ERROR:Error clicking next button at https://wchs.washington.kyschools.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:06:44,714:ERROR:Error clicking next button at http://caes.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:06:50,129:ERROR:Error clicking next button at https://sces.nm.k12.in.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:06:54,305:ERROR:Error clicking next button at http://rmes.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:07:00,417:ERROR:Error clicking next button at https://bhs.beaver.k12.ut.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:07:04,514:ERROR:Error clicking next button at http://laes.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:07:09,931:ERROR:Error clicking next button at https://ths.tustin.k12.ca.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+
+2024-07-11 13:07:13,871:ERROR:Error clicking next button at http://jwms.psusd.us/directory: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104e42a80 chromedriver + 4385408
+1   chromedriver                        0x0000000104e3b38c chromedriver + 4354956
+2   chromedriver                        0x0000000104a58b0c chromedriver + 281356
+3   chromedriver                        0x0000000104a9b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ad3d24 chromedriver + 785700
+5   chromedriver                        0x0000000104a8feec chromedriver + 507628
+6   chromedriver                        0x0000000104a908c4 chromedriver + 510148
+7   chromedriver                        0x0000000104e0a43c chromedriver + 4154428
+8   chromedriver                        0x0000000104e0eea0 chromedriver + 4173472
+9   chromedriver                        0x0000000104defff8 chromedriver + 4046840
+10  chromedriver                        0x0000000104e0f78c chromedriver + 4175756
+11  chromedriver                        0x0000000104de2fb8 chromedriver + 3993528
+12  chromedriver                        0x0000000104e2d21c chromedriver + 4297244
+13  chromedriver                        0x0000000104e2d398 chromedriver + 4297624
+14  chromedriver                        0x0000000104e3af84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x000000018113e034 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000181138e3c thread_start + 8
+

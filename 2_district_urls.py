@@ -2,7 +2,9 @@ import logging
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException, StaleElementReferenceException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from utils import read_from_csv, write_to_csv, start_time, end_time, announce_progress, reset_log
 
 """
@@ -31,24 +33,23 @@ def main():
     urls = set()
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--no-sandbox") 
+    chrome_options.add_argument("--no-sandbox")
     driver = webdriver.Chrome(options=chrome_options)
     links = read_from_csv('./csv_files/1_nces_links.csv')
     size = len(links)
 
     for i, link in enumerate(links):
         driver.get(link)
-        num_schools = driver.find_element(By.XPATH,'/html/body/div[1]/div[3]/table/tbody/tr[4]/td/table/tbody/tr[4]/td[3]/p/font').text
-        num_schools = int(num_schools)
-        if num_schools > 3: 
-            try:
-                url_element = driver.find_element(By.XPATH,"/html/body/div[1]/div[3]/table/tbody/tr[4]/td/table/tbody/tr[6]/td[1]/font[2]/a")
-                url = url_element.get_attribute('href')
-                url = url[42:]
-                urls.add(url)
-            except NoSuchElementException:
-                logging.error(f"Could not find url at {link}")
-        announce_progress(i,size)
+        try:
+            url_element = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div[3]/table/tbody/tr[4]/td/table/tbody/tr[6]/td[1]/font[2]/a'))
+            )
+            url = url_element.get_attribute('href')
+            url = url[42:]
+            urls.add(url)
+        except (NoSuchElementException, TimeoutException, StaleElementReferenceException) as e:
+            logging.error(f"Could not find URL at {link}: {e}")
+        announce_progress(i, size)
 
     urls = list(urls)
     write_to_csv(urls, './csv_files/2_district_links.csv')

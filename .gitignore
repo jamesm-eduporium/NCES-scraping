@@ -4,7 +4,7 @@
 
 # All csv data
 
-/csv_files/*
+*.csv
 
 # All emails
 

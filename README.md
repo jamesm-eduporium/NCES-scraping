@@ -18,8 +18,8 @@ However, it was written with re-use in mind, and can be re-run efficiently and a
 natural growth of school districts over time, and a slightly variety in results each execution due to site loading times,
 district maintinence, and an assortment of other reasons that result in slightly changed values each time (Usually less than 1%).
 
-When they are run in conjunction, expect the process to take about 3.5 hours. The entire system can be ran at once by using
-the run_all.py file.
+When they are run in conjunction, expect the process to take about 3.5 - 4 hours, although this number may vary drastically depending
+on connection speeds and other external factors. The entire system can be ran at once by using the run_all.py file.
 
 _All data is only representative of Public Schools in the United States, and may not be the latest data._
 _**This project was written entirely by James McGillicuddy for the sole use of Eduporium.**_
