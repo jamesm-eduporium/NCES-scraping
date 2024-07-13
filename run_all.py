@@ -1,5 +1,6 @@
 import os
 import subprocess
+from utils import start_time, end_time
 
 def execute_files(root_dir):
     py_files = [
@@ -19,5 +20,7 @@ def execute_files(root_dir):
         subprocess.run(["python3", file_path])
 
 if __name__ == "__main__":
+    start = start_time()
     root_directory = "." 
     execute_files(root_directory)
+    end_time(start)

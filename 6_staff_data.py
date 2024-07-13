@@ -19,7 +19,6 @@ def write_to_file(url, content, index):
         file.write(content)
 
 def process_url(index, url):
-    print(url)
     try:
         response = requests.get(url)
         soup = BeautifulSoup(response.content, 'html.parser')

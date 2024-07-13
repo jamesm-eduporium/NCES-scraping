@@ -39,16 +39,19 @@ def main():
     size = len(links)
 
     for i, link in enumerate(links):
-        driver.get(link)
         try:
-            url_element = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div[3]/table/tbody/tr[4]/td/table/tbody/tr[6]/td[1]/font[2]/a'))
-            )
-            url = url_element.get_attribute('href')
-            url = url[42:]
-            urls.add(url)
-        except (NoSuchElementException, TimeoutException, StaleElementReferenceException) as e:
-            logging.error(f"Could not find URL at {link}: {e}")
+            driver.get(link)
+            try:
+                url_element = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div[3]/table/tbody/tr[4]/td/table/tbody/tr[6]/td[1]/font[2]/a'))
+                )
+                url = url_element.get_attribute('href')
+                url = url[42:]
+                urls.add(url)
+            except (NoSuchElementException, TimeoutException, StaleElementReferenceException) as e:
+                logging.error(f"Could not find URL at {link}: {e}")
+        except Exception as e:
+            logging.error(f"Could not get {url}: {e}")
         announce_progress(i, size)
 
     urls = list(urls)

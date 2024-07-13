@@ -5,7 +5,3 @@
 # All csv data
 
 *.csv
-
-# All emails
-
-/emails.csv

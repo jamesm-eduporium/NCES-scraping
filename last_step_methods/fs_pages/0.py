@@ -7,11 +7,13 @@ sys.path.insert(0, root_dir)
 from utils import read_from_csv, write_to_csv, start_time, end_time
 
 def process_url(url, fs_urls):
+    keywords = ['/directory', '/schools/ms-directory', '/apps/staff', '/faculty-and-staff/staff-directory']
     if url.endswith('.us'):
         try:
-            response = requests.get(url + '/directory')
-            response.raise_for_status()
-            fs_urls.add(url + '/directory')
+            for keyword in keywords:
+                response = requests.get(url + keyword)
+                response.raise_for_status()
+                fs_urls.add(url + keyword)
         except:
             print(f'Could not find a directory at {url}')
 
