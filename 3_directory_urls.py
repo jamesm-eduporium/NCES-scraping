@@ -10,7 +10,7 @@ Using concurrency, the module is able to find school directories for just under 
 initial problem was the vast number of domains being accessed, and the variety of design in them. By using
 concurreny, and a variety of methods to try to locate the school directory, large improvements were made.
 
-School Directory Sites: 2863
+School Directory Sites: 6583
 Runtime: ~20 Minutes
 
 Author: James McGillicuddy

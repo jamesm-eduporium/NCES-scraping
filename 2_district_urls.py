@@ -16,7 +16,7 @@ category, and within that subcategory the large majority are listed as 1 school 
 defeat the point of a school district. Regardless, this proccess takes much longer as each of the individual
 14973 links gained in the first module must be independently accessed and processed.
 
-School District Sites: 5883
+School District Sites: 16042
 Runtime: ~2 Hours 30 Minutes
 
 Author: James McGillicuddy

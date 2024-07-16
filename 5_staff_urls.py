@@ -8,7 +8,7 @@ if it can be found. It follows the same bs4 and concurrency format as the previo
 The exact number of directories found per run may vary due to loading times. The value below
 should represent the number accessed on the latest run.
 
-Staff Directories: 2673
+Staff Directories: 6984
 Runtime: ~6 Minutes
 
 Author: James McGillicuddy

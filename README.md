@@ -18,29 +18,28 @@ However, it was written with re-use in mind, and can be re-run efficiently and a
 natural growth of school districts over time, and a slightly variety in results each execution due to site loading times,
 district maintinence, and an assortment of other reasons that result in slightly changed values each time (Usually less than 1%).
 
-When they are run in conjunction, expect the process to take about 3.5 - 4 hours, although this number may vary drastically depending
-on connection speeds and other external factors. The entire system can be ran at once by using the run_all.py file.
+The entire system can be ran at once by using the run_all.py file.
 
 _All data is only representative of Public Schools in the United States, and may not be the latest data._
-_**This project was written entirely by James McGillicuddy for the sole use of Eduporium.**_
+**_This project was written entirely by James McGillicuddy for the sole use of Eduporium.**_
 
 
 
-## STATISTICS (last updated 07/09/24):
+## STATISTICS (last updated 07/16/24):
 
-Emails Accessed: 14,955
+Emails Accessed: 27247
 
-School District Websites Found: 5883
+School District Websites Found: 16042
 
-School Directories Found: 2863
+School Directories Found: 6583
 
-Schools Found: 4005
+Schools Found: 6688
 
-Staff Directories Found: 3895
+Staff Directories Found: 9985 (Some staff directories were found directly from the school directory, which is why there are more directories than schools.)
 
 
 
-## SUCCESS RATE (last updated 07/09/24):
+## SUCCESS RATE (last updated 07/16/24):
 
 Success rate can be different as each module had its own success rate from input to output, and none besides module 6 reached over 95%.
 However, on a dataset as large as this a success rate of even 5% is acceptable for practical purposes. Therefore, I have listed out all
@@ -54,30 +53,17 @@ Amount of Public Schools: 98,328
 (Average) Teachers per School: 38.28 (TPS)
 
 
-1. 14,955 emails / (19473 school districts * 193.3 TPSD) = _14,955 / 3,764,130.9_ = `0.397%`
+1. 27,247 emails / (19442 school districts * 193.3 TPSD) = _27,247 / 3,758,138.6_ = `0.725%`
 
-2. 14,955 emails / (5883 accessed school districts * 193.3 TPSD) = _14,955 / 1,137,183.9_ = `1.315%`
+2. 27,247 emails / (16042 accessed school districts * 193.3 TPSD) = _27,247 / 3,100,918.6_ = `0.879%`
 
-3. 14,955 emails / (2863 school directories * 193.3 TPSD) = _14,955 / 553,417.9_ = `2.702%`
+3. 27,247 emails / (6583 school directories * 193.3 TPSD) = _27,247 / 1,272,493.3_ = `2.141%`
 
-4. 14,955 emails / (3895 staff directories * 38.28 TPS) = _14,955 / 125,730.6_ = `11.894%`
+4. 27,247 emails / (9985 staff directories * 38.28 TPS) = _27,247 / 382,225.8_ = `7.129%`
 
-All four of these numbers display different perspectives of success. The first, 0.397%, displays that the system was able
-to access about half a percent of every single possible email it could. While overarching, this number does not show much as
-almost 75% of school districts on NCES either consisted of less than 4 schools or did not list a website. Therefore, there is
-little the system can do to improve the number of districts accessed. 
+All four of these numbers represent different perspectives of success, ranging an order of magnitude. The first value can represent that almost 1% of all teacher emails in the United States have been accessed and stored. About the same percentage is shown in the second value, which shows that the system is able to get almost all, or _16042 / 19442 = 82.5%_ of school district sites from NCES. This is promising as a good portion of districts do not have a URL listed or fall into another bucket that is not helpful for this project, so the system pretty much nears 100% efficiency on that mark.
 
-Thats why the second value is much more valuable. It displays the total percentage found of all districts that could actually be accessed.
-This gives a better insight and says that for any given school district url, expect a ~1.3% success rate.
+The third and fourth values also give insight on the effectiveness of the system when "entered" at different steps. Looking from step 2 -> 3, there is a large drop off in number of sites. This is due to the swap from one domain to the variety of domains of each school district. This is one (if not the most applicable) section of improvement for the system, but it still remains the most difficult. Regardless, the percentage there shows that the system was successful in ~2% of all school districts **it was able to find in previous steps**. The same can be said for step four.
 
-The third and fourth values also give insight on the effectiveness of the system when "entered" at different steps, however
-they only display the effectiveness of part of the system rather than the whole. So while they show important information
-about individual sections of the system, I believe that the 2nd value still represents the overarching system the best.
-
-
-These small percentages represent massive wins for the system. A task like webscraping, especially using just bs4 and Selenium,
-inherently approach a limit due to the vast differences in all of the site design. At some point it becomes more efficient to
-go to each site and write down the emails by hand rather than to write scraping code so specific it cannot work for any other site.
-However, the limit has not yet been met and I will continue to attempt to increase it by accessing more schools and staff directories,
-and also having a higher html parsing success rate. LLMs and other AIs can also be used to find directories more efficiently and without
-as much fail.
+These small percentages represent massive wins for the system. A task like webscraping can only produce so much, as it
+inherently approaches a limit due to the vast differences in all of the site design. When looking back at the 27,247 figure, while that can be represented as a small percentage, it also represents the amount of potential customers gained which makes it appear much larger. However, that limit has not yet been met by this system and I will continue to attempt to increase it by accessing more schools and staff directories, and also having a higher html parsing success rate. LLMs and other AIs can also be used to find directories more efficiently and without as much fail.

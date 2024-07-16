@@ -10,8 +10,8 @@ point to a staff directory rather than a school directory are seperated. After t
 then sifted through to try to minimize the number of junk sites accessed. Essentially, the links that are already at
 the staff directory are just passed through, while the rest are prepared to find that staff directory
 
-Individual Schools Accessed: 2783
-Staff Directories: 1222
+Individual Schools Accessed: 6688
+Staff Directories: 3001
 Runtime: ~3 Minutes
 
 Author: James McGillicuddy
