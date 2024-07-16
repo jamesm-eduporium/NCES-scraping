@@ -11,12 +11,20 @@ Runtime: ~1 second
 Author: James McGillicuddy
 """
 
+def remove_capital_part(email):
+    parts = email.split('@')
+    if len(parts) > 1:
+        parts[1] = re.sub(r'[A-Z].*', '', parts[1])
+    return '@'.join(parts)
+
+
 def get_emails_from_file(file_path, all_emails):
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
             content = file.read()
-        emails = re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', content)
-        all_emails.update(emails)
+        re_emails = re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', content)
+        cleaned_emails = [remove_capital_part(email) for email in re_emails]
+        all_emails.update(cleaned_emails)
     except Exception as e:
         print(f"Error reading file {file_path}: {e}")
 
