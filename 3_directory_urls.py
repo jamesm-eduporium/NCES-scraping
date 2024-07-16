@@ -10,8 +10,8 @@ Using concurrency, the module is able to find school directories for just under 
 initial problem was the vast number of domains being accessed, and the variety of design in them. By using
 concurreny, and a variety of methods to try to locate the school directory, large improvements were made.
 
-School Directory Sites: 6583
-Runtime: ~20 Minutes
+School Directory Sites: 11827
+Runtime: ~1 Hour 5 Minutes // 246.8 district links per minute
 
 Author: James McGillicuddy
 """
@@ -21,7 +21,6 @@ def fetch_url(url):
         response = requests.get(url, timeout=5)
         return response.text
     except Exception as e:
-        logging.error(f"Error fetching URL {url}: {e}")
         return None
 
 def search_by_keyword(html, keywords, base_url):
@@ -58,17 +57,15 @@ def process_url(url):
     if not url.endswith('/'):
         url = url + "/"
     
-    keywords = ['Our-Schools', 'School-Directory', 'Find-Schools', 'Directory']
+    keywords = ['Our-Schools', 'School-Directory', 'Find-Schools', 'Directory', 'Staff', 'Staff-Directory', 'Faculty', 'Faculty-Staff', 'Staff-Faculty']
     html = fetch_url(url)
     
     directory_url = search_by_keyword(html, keywords, url)
     if directory_url:
-        print(f"Found {directory_url} by keyword")
         return directory_url
 
     directory_url = search_by_url_manip(url, keywords)
     if directory_url:
-        print(f"Found {directory_url} by URL manipulation")
         return directory_url
 
     logging.error(f"Could not find any access points at {url}")

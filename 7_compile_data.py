@@ -5,8 +5,8 @@ from utils import start_time, end_time
 After accessing each pages' html content, Module 7 parses that content. It iterates through each txt file
 and finds all emails using regular expressions. For now, it only is able to access emails on static pages.
 
-Emails found: 27247
-Runtime: ~2 Seconds
+Emails found: 57580
+Runtime: ~4 Seconds
 
 Author: James McGillicuddy
 """

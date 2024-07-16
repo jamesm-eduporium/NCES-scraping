@@ -7,7 +7,8 @@ Module 6 is a stepping stone to the final step, accessing all of the accumulated
 directories and pulling the entire html content of each site into its own .txt file for 
 parsing in the next module.
 
-Runtime: ~ 9 Minutes 
+School HTML Pages Stored: 13,397
+Runtime: ~ 26 Minutes // 515.269 source pages per minute
 
 Author: James McGillicuddy
 """

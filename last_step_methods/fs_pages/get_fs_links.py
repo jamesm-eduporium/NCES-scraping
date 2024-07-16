@@ -9,7 +9,6 @@ from utils import read_from_csv, write_to_csv, start_time, end_time
 def process_url(url):
     try:
         response = requests.get(url)
-        response.raise_for_status()
         soup = BeautifulSoup(response.content, 'html.parser')
         if soup.find(class_='fsElement'):
             return url
@@ -19,15 +18,14 @@ def process_url(url):
 
 def main():
     start = start_time()
-    list_one = read_from_csv('./csv_files/5_staff_links_1.csv')
-    list_two = read_from_csv('./csv_files/5_staff_links_2.csv')
+    list_one = read_from_csv('/Users/jmcgill/Desktop/Eduporium/Code/broad-web-scraping/csv_files/5_staff_links_1.csv')
+    list_two = read_from_csv('/Users/jmcgill/Desktop/Eduporium/Code/broad-web-scraping/csv_files/5_staff_links_2.csv')
     staff_directories = list_one + list_two
     fs_pages = set()
 
     with ThreadPoolExecutor(max_workers=5) as executor:
         futures = {executor.submit(process_url, url): url for url in staff_directories}
         for future in as_completed(futures):
-            url = futures[future]
             try:
                 result = future.result()
                 if result:
@@ -36,7 +34,7 @@ def main():
                 pass # Possible to add logging here, but mostly just bad URLs
     
     fs_pages = list(fs_pages)
-    write_to_csv(fs_pages, './fs_page_urls.csv')
+    write_to_csv(fs_pages, '/Users/jmcgill/Desktop/Eduporium/Code/broad-web-scraping/last_step_methods/fs_pages/fs_page_urls.csv')
     end_time(start)
 
 if __name__ == '__main__':

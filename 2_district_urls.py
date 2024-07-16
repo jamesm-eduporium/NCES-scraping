@@ -17,7 +17,7 @@ defeat the point of a school district. Regardless, this proccess takes much long
 14973 links gained in the first module must be independently accessed and processed.
 
 School District Sites: 16042
-Runtime: ~2 Hours 30 Minutes
+Runtime: ~2 Hours 30 Minutes // 129.613 Reference pages per minute #NOT ACCURATE
 
 Author: James McGillicuddy
 """

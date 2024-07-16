@@ -55,11 +55,10 @@ def process_state(driver, value, district_links, main_url):
                 EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/div[3]/table/tbody/tr[3]/td/table/tbody/tr[3]/td[2]/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td[2]/input'))
             )
             search_button.click()
-            print(f"Selected option with value: {state_dict[value]}")
             process_pages(driver, district_links)
             break 
         except (StaleElementReferenceException, TimeoutException) as e:
-            print(f"Attempt {attempt + 1} failed for value: {state_dict[value]}, number {value}. Error: {e}")
+            logging.error(f"Attempt {attempt + 1} failed for value: {state_dict[value]}, number {value}. Error: {e}")
             if attempt == 2:
                 logging.error(f"Failed to process state {state_dict[value]} after 3 attempts. Error: {e}")
                 
@@ -79,7 +78,6 @@ def process_pages(driver, district_links):
             else:
                 break
         except (NoSuchElementException, TimeoutException):
-            print("There is no next button! You are probably at the end of the list.")
             break
 
 def open_district(driver, district_links):

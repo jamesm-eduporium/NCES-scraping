@@ -10,9 +10,9 @@ point to a staff directory rather than a school directory are seperated. After t
 then sifted through to try to minimize the number of junk sites accessed. Essentially, the links that are already at
 the staff directory are just passed through, while the rest are prepared to find that staff directory
 
-Individual Schools Accessed: 6688
-Staff Directories: 3001
-Runtime: ~3 Minutes
+Individual Schools Accessed: 6585
+Staff Directories: 7402
+Runtime: ~8 Minutes // 1,478.375 directory links per minute
 
 Author: James McGillicuddy
 """
