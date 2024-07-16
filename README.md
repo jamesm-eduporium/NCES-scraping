@@ -21,7 +21,7 @@ district maintinence, and an assortment of other reasons that result in slightly
 The entire system can be ran at once by using the run_all.py file.
 
 _All data is only representative of Public Schools in the United States, and may not be the latest data._
-**_This project was written entirely by James McGillicuddy for the sole use of Eduporium.**_
+**This project was written entirely by James McGillicuddy for the sole use of Eduporium.**
 
 
 
