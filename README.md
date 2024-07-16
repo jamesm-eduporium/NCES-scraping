@@ -46,11 +46,11 @@ However, on a dataset as large as this a success rate of even 5% is acceptable f
 "possible" success rates.
 
 I have again used NCES for the following data. All of the data is either directly reported or derived from that data. Values may
-be slightly changed as some data is from 20202-2021, but the variance is not significant enough for the purposes of this project.
+be slightly changed as some data is from 2020-2021, but the variance is not significant enough for the purposes of this project.
 
-Amount of Public Schools: 98,328
-(Average) Teachers per School District: 193.3 (TPSD)
-(Average) Teachers per School: 38.28 (TPS)
+- Amount of Public Schools: 98,328
+- (Average) Teachers per School District: 193.3 (TPSD)
+- (Average) Teachers per School: 38.28 (TPS)
 
 
 1. 27,247 emails / (19442 school districts * 193.3 TPSD) = _27,247 / 3,758,138.6_ = `0.725%`
