@@ -2,7 +2,7 @@ import sys, os, requests
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
+root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
 sys.path.insert(0, root_dir)
 from utils import read_from_csv, write_to_csv, start_time, end_time
 
@@ -18,8 +18,8 @@ def process_url(url):
 
 def main():
     start = start_time()
-    list_one = read_from_csv('/Users/jmcgill/Desktop/Eduporium/Code/broad-web-scraping/csv_files/5_staff_links_1.csv')
-    list_two = read_from_csv('/Users/jmcgill/Desktop/Eduporium/Code/broad-web-scraping/csv_files/5_staff_links_2.csv')
+    list_one = read_from_csv('csv_files/5_staff_links_1.csv')
+    list_two = read_from_csv('csv_files/5_staff_links_2.csv')
     staff_directories = list_one + list_two
     fs_pages = set()
 
@@ -30,11 +30,11 @@ def main():
                 result = future.result()
                 if result:
                     fs_pages.add(result)
-            except Exception as e:
+            except:
                 pass # Possible to add logging here, but mostly just bad URLs
     
     fs_pages = list(fs_pages)
-    write_to_csv(fs_pages, '/Users/jmcgill/Desktop/Eduporium/Code/broad-web-scraping/last_step_methods/fs_pages/fs_page_urls.csv')
+    write_to_csv(fs_pages, 'fs_pages/fs_page_urls.csv')
     end_time(start)
 
 if __name__ == '__main__':

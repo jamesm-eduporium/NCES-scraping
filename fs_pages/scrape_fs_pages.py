@@ -13,10 +13,6 @@ logging.basicConfig(
     level=logging.DEBUG, 
     format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S' 
     ) 
-def clean_name(name): 
-    name = name.splitlines()[0] 
-    name = name.title() 
-    return name 
 
 def process_url(driver, url, staff_data): 
     try: 
@@ -28,11 +24,13 @@ def process_url(driver, url, staff_data):
                 emails = driver.find_elements(By.CLASS_NAME,'fsEmail') 
                 time.sleep(1) 
                 min_length = min(len(names), len(titles), len(emails)) 
-                for i in range(min_length): 
+                for i in range(min_length):
+                    # All of these values are formatted very strangely, however its safer to just store the values and then
+                    # normalize them later, as to not format any of them incorrectly.
                     try: staff_data.append(
-                        { 'name': clean_name(names[i].text), 
-                         'title': titles[i].text[8:] if titles[i].text.startswith('Titles:') else titles[i].text, 
-                         'email': emails[i] #Too much variance in email format, safer to just get all data and then normalize after 
+                        { 'name': names[i], 
+                         'title': titles[i],
+                         'email': emails[i] 
                          }) 
                     except Exception as e: logging.error(f'Error: {e}') 
                     next_button = WebDriverWait(driver, 3).until( EC.element_to_be_clickable((By.CLASS_NAME, "fsNextPageLink")) ) 
