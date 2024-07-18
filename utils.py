@@ -53,6 +53,9 @@ def reset_log(file_path):
     else:
         print(f"The file {file_path} does not exist.")
 
+def dynamic_location(file, filepath):
+    return os.path.join(os.path.dirname(file), filepath)
+
 state_dict = {
     "01": "Alabama",
     "02": "Alaska",
