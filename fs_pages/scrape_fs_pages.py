@@ -11,36 +11,49 @@ logging.basicConfig(
     level=logging.DEBUG, 
     format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S' 
     ) 
+
 def flatten(s): 
     flat = ''
-    if s:
-        for line in s.splitlines():
-            flat = flat + line
-        return flat
-    else:
-        return 'N/A'
+    for line in s.splitlines():
+        flat = flat + line
+    return flat
 
 def process_url(driver, url, staff_data):
     try:
         driver.get(url)
         while True:
-            names = driver.find_elements(By.CLASS_NAME, 'fsConstituentProfileLink')
-            titles = driver.find_elements(By.CLASS_NAME, 'fsTitles')
-            emails = driver.find_elements(By.CLASS_NAME, 'fsEmail')
+            profiles = driver.find_elements(By.CLASS_NAME, 'fsConstituentItem')
 
-            min_length = min(len(names), len(titles), len(emails))
-            for i in range(min_length):
+            for profile in profiles:
+                name = 'N/A'
+                titles = 'N/A'
+                email = 'N/A'
+
                 try:
-                    # For now, the data is not formatted (besides being flattened for csv purposes) as it varies a good amount.
-                    # It will be normalized with another script after all the data has been stored. 
-                    staff_member = {
-                        'name': flatten(names[i].text),
-                        'title': flatten(titles[i].text),
-                        'email': flatten(emails[i].text)
-                    }
-                    staff_data.append(staff_member)
-                except Exception as e:
-                    logging.error(f'Error processing data: {e}')
+                    name_element = profile.find_element(By.CSS_SELECTOR, 'h3.fsFullName a')
+                    name = flatten(name_element.text)
+                except:
+                    pass
+                try:
+                    titles_element = profile.find_element(By.CLASS_NAME, 'fsTitles').text
+                    titles = flatten(titles_element)
+                except:
+                    pass
+                try:
+                    email_element = profile.find_element(By.CLASS_NAME, 'fsEmail').find_element(By.TAG_NAME, 'a')
+                    email = flatten(email_element.get_attribute('href'))
+                    if email.startswith('mailto:'):
+                        email = email[7:]
+                except:
+                    pass
+                
+                staff_member = {
+                    'name': name,
+                    'titles': titles,
+                    'email': email 
+                }
+
+                staff_data.append(staff_member)
 
             next_button = driver.find_element(By.CLASS_NAME, "fsNextPageLink")
             if next_button.is_displayed():
@@ -58,7 +71,7 @@ def main():
     staff_directories = read_from_csv(dynamic_location(__file__, 'fs_page_urls.csv'))
     staff_data = [] 
     chrome_options = Options() 
-    #chrome_options.add_argument("--headless") 
+    chrome_options.add_argument("--headless") 
     chrome_options.add_argument("--no-sandbox") 
     driver = webdriver.Chrome(options=chrome_options) 
     for i, directory in enumerate(staff_directories): 
@@ -68,7 +81,7 @@ def main():
         writer = csv.writer(file) 
         writer.writerow(['Name','Title(s)','Email']) 
         for user in staff_data: 
-            writer.writerow([user['name'],user['title'],user['email']]) 
+            writer.writerow([user['name'],user['titles'],user['email']]) 
     end_time(start)
     
 if __name__ == '__main__': 
