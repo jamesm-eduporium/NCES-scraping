@@ -2,6 +2,14 @@
 
 /all_site_text/*
 
+# All scraped source content
+
+/all_site_source/*
+
 # All csv data
 
 *.csv
+
+# All log files
+
+*.log
