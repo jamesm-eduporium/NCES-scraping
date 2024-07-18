@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, StaleElementReferenceException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from utils import read_from_csv, write_to_csv, start_time, end_time, announce_progress, reset_log
+from utils import read_from_csv, write_to_csv, start_time, end_time, announce_progress, reset_log, dynamic_location
 
 """
 This module accesses every reference page found from scrape_nces_urls.py and scrapes then stores the listed
@@ -17,14 +17,14 @@ defeat the point of a school district. Regardless, this proccess takes much long
 14973 links gained in the first module must be independently accessed and processed.
 
 School District Sites: 16042
-Runtime: ~2 Hours 30 Minutes // 129.613 Reference pages per minute #NOT ACCURATE
+Runtime: !! UPDATE
 
 Author: James McGillicuddy
 """
 
 def main():
     start = start_time()
-    reset_log('./logs/2_district_urls.log')
+    reset_log(dynamic_location(__file__,'2_district_urls.log'))
     logging.basicConfig(
         filename='./logs/2_district_urls.log',
         level=logging.ERROR,
@@ -35,7 +35,7 @@ def main():
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--no-sandbox")
     driver = webdriver.Chrome(options=chrome_options)
-    links = read_from_csv('./csv_files/1_nces_links.csv')
+    links = read_from_csv(dynamic_location(__file__, '1_nces_links.csv'))
     size = len(links)
 
     for i, link in enumerate(links):
@@ -55,7 +55,7 @@ def main():
         announce_progress(i, size)
 
     urls = list(urls)
-    write_to_csv(urls, './csv_files/2_district_links.csv')
+    write_to_csv(urls, dynamic_location(__file__, '2_district_links.csv'))
     driver.quit()
     end_time(start)
 

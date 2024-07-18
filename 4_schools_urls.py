@@ -2,7 +2,7 @@ import logging
 import requests
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
-from utils import read_from_csv, write_to_csv, start_time, end_time, reset_log
+from utils import read_from_csv, write_to_csv, start_time, end_time, reset_log, dynamic_location
 
 """
 Similar to module 3, this uses bs4 and concurrency to access all of the links at once. First, links that may already
@@ -40,8 +40,8 @@ def process_url(url):
 
 def main():
     start = start_time()
-    all_urls = read_from_csv('./csv_files/3_directory_links.csv')
-    reset_log('./logs/4_schools_urls.log')
+    all_urls = read_from_csv(dynamic_location(__file__,'3_directory_links.csv'))
+    reset_log(dynamic_location(__file__,'4_schools_urls.log'))
     logging.basicConfig(
         filename='./logs/4_schools_urls.log',
         level=logging.ERROR,
@@ -69,8 +69,8 @@ def main():
     except Exception as e:
         logging.error(f"An error occurred during processing: {e}")
     finally:
-        write_to_csv(schools_urls, "./csv_files/4_schools_links.csv")
-        write_to_csv(list(staff_urls), './csv_files/5_staff_links_1.csv')
+        write_to_csv(schools_urls, dynamic_location(__file__, "4_schools_links.csv"))
+        write_to_csv(list(staff_urls), dynamic_location(__file__, '5_staff_links_1.csv'))
         end_time(start)
 
 if __name__ == '__main__':

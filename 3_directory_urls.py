@@ -2,7 +2,7 @@ import logging
 import requests
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
-from utils import read_from_csv, write_to_csv, start_time, end_time, reset_log
+from utils import read_from_csv, write_to_csv, start_time, end_time, reset_log, dynamic_location
 
 """
 This module is quite different from the previous two, only using bs4 to process all 5883 school districts. 
@@ -73,8 +73,8 @@ def process_url(url):
 
 def main():
     start = start_time()
-    district_urls = read_from_csv('./csv_files/2_district_links.csv')
-    reset_log('./logs/3_directory_urls.log')
+    district_urls = read_from_csv(dynamic_location(__file__, '2_district_links.csv'))
+    reset_log(dynamic_location(__file__,'3_directory_urls.log'))
     logging.basicConfig(
         filename='./logs/3_directory_urls.log',
         level=logging.ERROR,
@@ -86,7 +86,7 @@ def main():
         results = executor.map(process_url, district_urls)
 
     directory_urls = [url for url in results if url]
-    write_to_csv(directory_urls, './csv_files/3_directory_links.csv')
+    write_to_csv(directory_urls, dynamic_location(__file__, '3_directory_links.csv'))
     end_time(start)
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from utils import state_dict, start_time, end_time, write_to_csv, reset_log
+from utils import state_dict, start_time, end_time, write_to_csv, reset_log, dynamic_location
 
 """
 This module is used to get the link for every school district according to the National Center for Education Statistics (NCES). 
@@ -40,7 +40,7 @@ def main():
         if value:
             process_state(driver, value, district_links, main_url)
 
-    write_to_csv(district_links, './csv_files/1_nces_links.csv')
+    write_to_csv(district_links, dynamic_location(__file__, '1_nces_links.csv'))
     driver.quit()
     end_time(start)
 

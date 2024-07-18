@@ -1,7 +1,7 @@
 import requests, logging, csv, os
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
-from utils import start_time, end_time, read_from_csv, reset_log
+from utils import start_time, end_time, read_from_csv, reset_log, dynamic_location
 """
 Module 6 is a stepping stone to the final step, accessing all of the accumulated staff 
 directories and pulling the entire html content of each site into its own .txt file for 
@@ -30,10 +30,10 @@ def process_url(index, url):
 
 def main():
     start = start_time()
-    list_one = read_from_csv('./csv_files/5_staff_links_1.csv')
-    list_two = read_from_csv('./csv_files/5_staff_links_2.csv')
+    list_one = read_from_csv(dynamic_location(__file__, '5_staff_links_1.csv'))
+    list_two = read_from_csv(dynamic_location(__file__, '5_staff_links_2.csv'))
     staff_directories = list_one + list_two
-    reset_log('./logs/6_staff_data.log')
+    reset_log(dynamic_location(__file__, '6_staff_data.log'))
     logging.basicConfig(
         filename='./logs/6_staff_data.log',
         level=logging.ERROR,
