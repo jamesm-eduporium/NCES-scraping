@@ -4,13 +4,15 @@ sys.path.insert(0, root_dir)
 from utils import start_time, end_time, dynamic_location
 
 def clean_name(name):
-    return 0
+    name = name.title()
+    return name
 
 def clean_titles(titles):
-    return 0
-
-def clean_email(email):
-    return 0
+    titles = titles.title()
+    if titles.startswith('Titles:'):
+        return titles[8:]
+    return titles
+    
 
 def main():
     start = start_time()
@@ -20,15 +22,14 @@ def main():
         reader = csv.reader(file)
         next(reader)
         for row in reader:
-            if len(row) >= 3:
+            if len(row) >= 3 and not (row[2] == 'N/A'):
                 cleaned_name = clean_name(row[0])
                 cleaned_titles = clean_titles(row[1])
-                cleaned_email = clean_email(row[2])
                 
                 normalized_staff.append({
                     'name': cleaned_name,
                     'titles': cleaned_titles,
-                    'email': cleaned_email
+                    'email': row[2]
                 })
 
     with open(dynamic_location(__file__, 'normalized_fs_data.csv'), mode='w') as file:
