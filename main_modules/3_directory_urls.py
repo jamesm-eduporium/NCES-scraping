@@ -1,8 +1,10 @@
 import logging
 import requests
 from bs4 import BeautifulSoup
+import sys,os
 from concurrent.futures import ThreadPoolExecutor
-from ..utils.utilities import read_from_csv, write_to_csv, start_time, end_time, reset_log, dynamic_location
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from utils.utilities import read_from_csv, write_to_csv, start_time, end_time, reset_log, dynamic_location
 
 """
 This module is quite different from the previous two, only using bs4 to process all 5883 school districts. 

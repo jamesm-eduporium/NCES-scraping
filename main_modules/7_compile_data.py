@@ -1,5 +1,6 @@
-import re, os, csv
-from ..utils.utilities import start_time, end_time
+import re, os, csv, sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from utils.utilities import start_time, end_time
 
 """
 After accessing each pages' html content, Module 7 parses that content. It iterates through each txt file

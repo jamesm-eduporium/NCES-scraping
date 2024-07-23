@@ -1,7 +1,8 @@
-import logging, requests
+import logging, requests, sys, os
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
-from ..utils.utilities import start_time, end_time, read_from_csv , write_to_csv, reset_log, dynamic_location
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from utils.utilities import start_time, end_time, read_from_csv , write_to_csv, reset_log, dynamic_location
 """
 Module 5 takes the individual schools found from module 4 and accesses the staff directory
 if it can be found. It follows the same bs4 and concurrency format as the previous two modules.

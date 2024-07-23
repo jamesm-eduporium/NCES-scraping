@@ -1,11 +1,12 @@
-import logging
+import logging, sys, os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, StaleElementReferenceException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from ..utils.utilities import read_from_csv, write_to_csv, start_time, end_time, announce_progress, reset_log, dynamic_location
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from utils.utilities import read_from_csv, write_to_csv, start_time, end_time, announce_progress, reset_log, dynamic_location
 
 """
 This module accesses every reference page found from scrape_nces_urls.py and scrapes then stores the listed

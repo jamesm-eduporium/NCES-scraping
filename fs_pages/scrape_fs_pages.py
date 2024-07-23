@@ -1,7 +1,8 @@
-import logging, csv, time
+import logging, csv, time, sys, os
 from selenium import webdriver 
 from selenium.webdriver.common.by import By 
 from selenium.webdriver.chrome.options import Options
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from utils.utilities import start_time, end_time, read_from_csv, reset_log, announce_progress, dynamic_location
 
 logging.basicConfig( 

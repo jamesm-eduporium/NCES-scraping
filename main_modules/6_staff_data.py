@@ -1,7 +1,8 @@
-import requests, logging, csv, os
+import requests, logging, sys, os
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
-from ..utils.utilities import start_time, end_time, read_from_csv, reset_log, dynamic_location
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from utils.utilities import start_time, end_time, read_from_csv, reset_log, dynamic_location
 """
 Module 6 is a stepping stone to the final step, accessing all of the accumulated staff 
 directories and pulling the entire html content of each site into its own .txt file for 
