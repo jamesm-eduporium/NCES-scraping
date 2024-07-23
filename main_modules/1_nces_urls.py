@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from utils.utilities import state_dict, start_time, end_time, write_to_csv, reset_log, dynamic_location
+from ..utils.utilities import state_dict, start_time, end_time, write_to_csv, reset_log, dynamic_location
 
 """
 This module is used to get the link for every school district according to the National Center for Education Statistics (NCES). 

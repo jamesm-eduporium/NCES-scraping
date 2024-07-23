@@ -1,5 +1,5 @@
 import re, os, csv
-from utils.utilities import start_time, end_time, dynamic_location
+from ..utils.utilities import start_time, end_time
 
 """
 After accessing each pages' html content, Module 7 parses that content. It iterates through each txt file
@@ -24,7 +24,7 @@ def get_emails_from_file(file_path, all_emails):
             content = file.read()
         re_emails = re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', content)
         cleaned_emails = [remove_capital_part(email) for email in re_emails]
-        all_emails.update(cleaned_emails)
+        all_emails.update(re_emails)
     except Exception as e:
         print(f"Error reading file {file_path}: {e}")
 
