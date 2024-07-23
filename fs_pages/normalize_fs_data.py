@@ -1,7 +1,5 @@
-import csv, os, sys 
-root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../')) 
-sys.path.insert(0, root_dir)
-from utils import start_time, end_time, dynamic_location
+import csv
+from utils.utilities import start_time, end_time, dynamic_location
 
 def clean_name(name):
     name = name.title()

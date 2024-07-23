@@ -1,10 +1,8 @@
-import logging, csv, os, time, sys 
-root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../')) 
-sys.path.insert(0, root_dir) 
+import logging, csv, time
 from selenium import webdriver 
 from selenium.webdriver.common.by import By 
 from selenium.webdriver.chrome.options import Options
-from utils import start_time, end_time, read_from_csv, reset_log, announce_progress, dynamic_location
+from utils.utilities import start_time, end_time, read_from_csv, reset_log, announce_progress, dynamic_location
 
 logging.basicConfig( 
     filename='scraping.log', 

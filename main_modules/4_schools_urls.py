@@ -2,7 +2,7 @@ import logging
 import requests
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
-from utils import read_from_csv, write_to_csv, start_time, end_time, reset_log, dynamic_location
+from utils.utilities import read_from_csv, write_to_csv, start_time, end_time, reset_log, dynamic_location
 
 """
 Similar to module 3, this uses bs4 and concurrency to access all of the links at once. First, links that may already

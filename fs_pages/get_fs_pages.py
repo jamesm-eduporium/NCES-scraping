@@ -1,10 +1,7 @@
-import sys, os, requests
+import requests
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
-root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
-sys.path.insert(0, root_dir)
-from utils import read_from_csv, write_to_csv, start_time, end_time, dynamic_location
+from utils.utilities import read_from_csv, write_to_csv, start_time, end_time, dynamic_location
 
 def process_url(url):
     try:

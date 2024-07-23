@@ -1,5 +1,5 @@
-import re, os, csv, logging
-from utils import start_time, end_time
+import re, os, csv
+from utils.utilities import start_time, end_time, dynamic_location
 
 """
 After accessing each pages' html content, Module 7 parses that content. It iterates through each txt file
@@ -30,7 +30,7 @@ def get_emails_from_file(file_path, all_emails):
 
 def main():
     start = start_time()
-    directory = './all_site_text'
+    directory = '../all_site_text'
     emails = set()
 
     for filename in os.listdir(directory):

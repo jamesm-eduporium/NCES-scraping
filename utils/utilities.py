@@ -1,4 +1,4 @@
-import logging, json, os, csv, requests, datetime, re
+import os, csv, datetime
 
 
 """
@@ -8,7 +8,7 @@ Author: James McGillicuddy
 """
 
 def announce_progress(current, total):
-    percent_complete = round((current / total) * 100,2)
+    percent_complete = round((current / total) * 100, 2)
     if percent_complete % 5 == 0:
         current_time = datetime.datetime.now().strftime("%I:%M:%S %p")
         print(f"{int(percent_complete)}% complete at {current_time}")
@@ -42,10 +42,6 @@ def read_from_csv(file_path):
         csv_reader = csv.reader(file)
         return [row[0] for row in csv_reader]
     
-def verify_url(url):
-    regex = r'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)'
-    return bool(re.match(regex,url))
-
 def reset_log(file_path):
     if os.path.isfile(file_path):
         with open(file_path, 'w') as file:

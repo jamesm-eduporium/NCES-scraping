@@ -1,0 +1,7 @@
+## FS Page Scraping
+
+To look for 'FS Pages' as I will call them from here on out, I needed to find a common link between all of them. Using the site source I looked for any classes named 'fsElement' which all of the pages seemed to have. That left me with 2797 possible Fs Pages. Since all of these pages have the same class names for the name, title, email, and next-page elements, it was simple to write one script that works for all of the staff directories.
+
+One problem with this is that all of the pages are dynamically loaded, which means not only do they have to be scraped synchronously using Selenium rather than BS4, it also requires page loading times to be met, requiring ~2 seconds per staff listing. This is referring to "Page 2 of 17", for example on each of the 2800 sites, so the two seconds add up very quickly. As of writing I have only ran the script to completetion once on an EC2 AWS server, and that took about half a week to complete. When completed though and after normalization, it resulted in `124,959` staff members. All of these staff member's emails were present, and more than half also had name and title present.
+
+Looking at the code, the `scrape_fs_pages.py` script does all the heavy lifting and the other three scripts exist to serve and clean its data. Optimization is possible but mostly in terms of speed rather than data collection, until schools decide to add the missing data of their staff members.
