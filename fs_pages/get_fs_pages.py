@@ -1,35 +1,21 @@
-import requests, sys, os
-from bs4 import BeautifulSoup
-from concurrent.futures import ThreadPoolExecutor, as_completed
+import sys, os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from utils.utilities import read_from_csv, write_to_csv, start_time, end_time, dynamic_location
-
-def process_url(url):
-    try:
-        response = requests.get(url)
-        soup = BeautifulSoup(response.content, 'html.parser')
-        if soup.find(class_='fsElement'):
-            return url
-    except requests.exceptions.RequestException as e:
-        print(f"Error fetching {url}: {e}")
-    return None
+from utils.utilities import write_to_csv, start_time, end_time, dynamic_location
 
 def main():
     start = start_time()
-    list_one = read_from_csv(dynamic_location(__file__,'5_staff_links_1.csv'))
-    list_two = read_from_csv(dynamic_location(__file__,'5_staff_links_2.csv'))
-    staff_directories = list_one + list_two
     fs_pages = set()
+    directory = '../all_site_source/'
 
-    with ThreadPoolExecutor(max_workers=5) as executor:
-        futures = {executor.submit(process_url, url): url for url in staff_directories}
-        for future in as_completed(futures):
-            try:
-                result = future.result()
-                if result:
-                    fs_pages.add(result)
-            except:
-                pass # Possible to add logging here, but mostly just bad URLs
+
+    for filename in os.listdir(directory):
+            file_path = os.path.join(directory, filename)
+            with open(file_path, 'r', encoding='utf-8') as file:
+                content = file.read()
+                if 'finalsite' in content:
+                    first_line = content.splitlines()[0]
+                    url = first_line[9:]
+                    fs_pages.add(url)
     
     fs_pages = list(fs_pages)
     write_to_csv(fs_pages, dynamic_location(__file__,'fs_page_urls.csv'))
