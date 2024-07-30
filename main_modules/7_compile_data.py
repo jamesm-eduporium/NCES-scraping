@@ -4,7 +4,7 @@ import csv
 import sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from utils.utilities import start_time, end_time
+from utils.utilities import start_time, end_time, dynamic_location
 
 """
 After accessing each pages' HTML content, Module 7 parses that content. It iterates through each txt file
@@ -53,9 +53,9 @@ def main():
     try:
         with open(output_file, mode='w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
-            writer.writerow(['Emails'])
+            writer.writerow(['Name','Titles','Emails'])
             for email in sorted(emails):
-                writer.writerow([email])
+                writer.writerow(['N/A','N/A',email])
     except Exception as e:
         print(f"Error writing to file {output_file}: {e}")
 

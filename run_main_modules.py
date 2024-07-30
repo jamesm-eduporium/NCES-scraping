@@ -8,6 +8,9 @@ This will only run the main modules, it will not run any of the fs_page scripts!
 The runtime will vary depending on the starting module. If it is your first time running
 the model, start with module 1. If not, it is highly reccomended to start with at most
 module 3, as modules 1 and 2 make up the majority of runtime.
+
+It may have difficulty with running due to filepaths, so it is reccomended to run from the
+file(s) itself if possible.
 """
 
 def execute_files(root_dir, starting_index):

@@ -16,15 +16,7 @@ def main():
             next(reader)
 
             for row in reader:
-                staff_member = {'name': '', 'title': '', 'email': ''}
-                if len(row) > 1:
-                    staff_member['name'] = row[0]
-                    staff_member['title'] = row[1]
-                    staff_member['email'] = row[2]
-                else:
-                    staff_member['name'] = 'N/A'
-                    staff_member['title'] = 'N/A'
-                    staff_member['email'] = row[0]
+                staff_member = {'name': row[0], 'title': row[1], 'email': row[2]}
                 all_data.append(staff_member)
     
     with open('./data.csv', 'w') as file:
