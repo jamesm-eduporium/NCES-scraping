@@ -1,10 +1,7 @@
-import logging
-import requests
+import logging, requests, csv
 from bs4 import BeautifulSoup
-import sys,os
 from concurrent.futures import ThreadPoolExecutor
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from utils.utilities import read_from_csv, write_to_csv, start_time, end_time, reset_log, dynamic_location
+from utilities import read_from_csv, write_to_csv, start_time, end_time, reset_log, dynamic_location
 
 """
 This module is quite different from the previous two, only using bs4 to process all 5883 school districts. 
@@ -53,42 +50,54 @@ def search_by_url_manip(base_url, keywords):
             continue
     return None
 
-def process_url(url):
+def process_url(data):
+    url = data[0]
     if not url.startswith('http'):
         url = 'http://' + url
     if not url.endswith('/'):
         url = url + "/"
     
-    keywords = ['Our-Schools', 'School-Directory', 'Find-Schools', 'Directory', 'Staff', 'Staff-Directory', 'Faculty', 'Faculty-Staff', 'Staff-Faculty']
+    keywords = ['Staff', 'Staff-Directory', 'Faculty', 'Faculty-Staff', 'Staff-Faculty', 'Directory', 'Our-Staff']
     html = fetch_url(url)
     
     directory_url = search_by_keyword(html, keywords, url)
     if directory_url:
-        return directory_url
+        return (directory_url, url, data[1])
 
     directory_url = search_by_url_manip(url, keywords)
     if directory_url:
-        return directory_url
+        return (directory_url, url, data[1])
 
     logging.error(f"Could not find any access points at {url}")
     return None
 
 def main():
     start = start_time()
-    district_urls = read_from_csv(dynamic_location(__file__, '2_district_links.csv'))
-    reset_log(dynamic_location(__file__,'3_directory_urls.log'))
+    school_data = []
+
+    with open('../csv_files/2_school_urls') as file:
+        reader = csv.reader(file)
+        next(reader)
+        for row in reader:
+            school_data.append(row)
+    
+    reset_log('./logs/3_directory_urls.log')
     logging.basicConfig(
         filename='./logs/3_directory_urls.log',
         level=logging.ERROR,
         format='%(asctime)s:%(levelname)s:%(message)s'
     )
 
-    directory_urls = []
     with ThreadPoolExecutor(max_workers=10) as executor:
-        results = executor.map(process_url, district_urls)
+        results = list(executor.map(process_url, school_data))
 
-    directory_urls = [url for url in results if url]
-    write_to_csv(directory_urls, dynamic_location(__file__, '3_directory_links.csv'))
+    with open('../csv_files/3_directory_results.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['Directory URL', 'Base URL', 'ID'])
+        for result in results:
+            if result:
+                writer.writerow(result)
+    
     end_time(start)
 
 if __name__ == "__main__":

@@ -1,8 +1,7 @@
-import logging, requests, sys, os
+import logging, requests
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from utils.utilities import read_from_csv, write_to_csv, start_time, end_time, reset_log, dynamic_location
+from utilities import read_from_csv, write_to_csv, start_time, end_time, reset_log, dynamic_location
 
 """
 Similar to module 3, this uses bs4 and concurrency to access all of the links at once. First, links that may already

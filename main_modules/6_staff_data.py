@@ -1,8 +1,7 @@
-import requests, logging, sys, os
+import requests, logging, os
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from utils.utilities import start_time, end_time, read_from_csv, reset_log, dynamic_location
+from utilities import start_time, end_time, read_from_csv, reset_log, dynamic_location
 """
 Module 6 is a stepping stone to the final step, accessing all of the accumulated staff 
 directories and pulling the entire html content of each site into its own .txt file for 
@@ -15,7 +14,7 @@ Author: James McGillicuddy
 """
 def write_to_file(url, content, index):
     os.makedirs('./all_site_text', exist_ok=True)
-    file_path = os.path.join('./all_site_text', f'site_content_{index}.txt')
+    file_path = os.path.join('../all_site_text', f'site_content_{index}.txt')
     with open(file_path, 'w', encoding='utf-8') as file:
         file.write(f'Website: {url} \n\n')
         file.write(content)

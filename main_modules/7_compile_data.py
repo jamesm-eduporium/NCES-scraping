@@ -1,11 +1,5 @@
-import re
-import os
-import csv
-import sys
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from utils.utilities import start_time, end_time, dynamic_location
-
+import re, csv, os
+from utilities import start_time, end_time
 """
 After accessing each pages' HTML content, Module 7 parses that content. It iterates through each txt file
 and finds all emails using regular expressions. 
@@ -17,7 +11,8 @@ Author: James McGillicuddy
 """
 
 def clean(email):
-    email = re.sub(f'^{r'^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}'}\s*', '', email)
+    phone_regex = r'^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}\s*'
+    email = re.sub(phone_regex, '', email)
     domains = ['.com', '.org', '.net', '.us', '.edu']
     for domain in domains:
         index = email.find(domain)

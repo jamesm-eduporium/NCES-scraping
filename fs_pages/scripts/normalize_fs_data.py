@@ -1,6 +1,5 @@
-import csv, sys, os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from utils.utilities import start_time, end_time, dynamic_location
+import csv
+from utilities import start_time, end_time
 
 def clean_name(name):
     name = name.title()
@@ -17,7 +16,7 @@ def main():
     start = start_time()
     normalized_staff = []
 
-    with open(dynamic_location(__file__,'fs_staff_data.csv'), mode='r') as file:
+    with open('../fs_csvs/fs_staff_data.csv', mode='r') as file:
         reader = csv.reader(file)
         next(reader)
         for row in reader:
@@ -31,7 +30,7 @@ def main():
                     'email': row[2]
                 })
 
-    with open(dynamic_location(__file__, 'normalized_fs_data.csv'), mode='w') as file:
+    with open('../fs_csvs/normalized_fs_data.csv', mode='w') as file:
         writer = csv.writer(file)
         writer.writerow(['Name','Title(s)','Email'])
 

@@ -1,9 +1,8 @@
-import logging, csv, time, sys, os
+import logging, csv, time
 from selenium import webdriver 
 from selenium.webdriver.common.by import By 
 from selenium.webdriver.chrome.options import Options
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from utils.utilities import start_time, end_time, read_from_csv, reset_log, announce_progress, dynamic_location
+from utilities import start_time, end_time, read_from_csv, reset_log, announce_progress
 
 logging.basicConfig( 
     filename='scraping.log', 
@@ -66,8 +65,8 @@ def process_url(driver, url, staff_data):
     
 def main(): 
     start = start_time() 
-    reset_log(dynamic_location(__file__, 'scraping.log'))
-    staff_directories = read_from_csv(dynamic_location(__file__, 'fs_page_urls.csv'))
+    reset_log('../scraping.log')
+    staff_directories = read_from_csv('../fs_csvs/fs_page_urls.csv')
     staff_data = [] 
     chrome_options = Options() 
     chrome_options.add_argument("--headless") 
@@ -76,7 +75,7 @@ def main():
     for i, directory in enumerate(staff_directories): 
         process_url(driver, directory, staff_data) 
         announce_progress(i, len(staff_directories)) 
-    with open(dynamic_location(__file__, 'fs_staff_data.csv'), mode='w') as file: 
+    with open('../fs_csvs/fs_staff_data.csv', mode='w') as file: 
         writer = csv.writer(file) 
         writer.writerow(['Name','Title(s)','Email']) 
         for user in staff_data: 
