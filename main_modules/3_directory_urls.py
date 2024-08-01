@@ -1,7 +1,7 @@
 import logging, requests, csv
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
-from utilities import read_from_csv, write_to_csv, start_time, end_time, reset_log, dynamic_location
+from utilities import start_time, end_time, reset_log
 
 """
 This module is quite different from the previous two, only using bs4 to process all 5883 school districts. 
@@ -22,7 +22,8 @@ def fetch_url(url):
     except Exception as e:
         return None
 
-def search_by_keyword(html, keywords, base_url):
+def search_by_keyword(html, base_url):
+    keywords = ['Staff-Directory', 'Faculty', 'Faculty-Staff', 'Staff-Faculty', 'Our-Staff', 'Our-Team','Staff', 'Directory']
     if not html:
         return None
     try:
@@ -38,11 +39,12 @@ def search_by_keyword(html, keywords, base_url):
         logging.error(f"Error parsing HTML for {base_url}: {e}")
     return None
 
-def search_by_url_manip(base_url, keywords):
+def search_by_url_manip(base_url):
+    keywords = ['Staff', 'Staff-Directory', 'Faculty', 'Faculty-Staff', 'Staff-Faculty', 'Our-Staff', 'Our-Team', 'Directory']
     for keyword in keywords:
         manipulated_url = base_url + keyword
         try:
-            response = requests.head(manipulated_url, allow_redirects=True, timeout=3)
+            response = requests.get(manipulated_url, allow_redirects=True, timeout=3)
             if response.status_code == 200:
                 return manipulated_url
         except Exception as e:
@@ -57,14 +59,13 @@ def process_url(data):
     if not url.endswith('/'):
         url = url + "/"
     
-    keywords = ['Staff', 'Staff-Directory', 'Faculty', 'Faculty-Staff', 'Staff-Faculty', 'Directory', 'Our-Staff']
     html = fetch_url(url)
-    
-    directory_url = search_by_keyword(html, keywords, url)
+
+    directory_url = search_by_url_manip(url)
     if directory_url:
         return (directory_url, url, data[1])
-
-    directory_url = search_by_url_manip(url, keywords)
+     
+    directory_url = search_by_keyword(html, url)
     if directory_url:
         return (directory_url, url, data[1])
 
@@ -75,7 +76,7 @@ def main():
     start = start_time()
     school_data = []
 
-    with open('../csv_files/2_school_urls') as file:
+    with open('../csv_files/2_school_urls.csv') as file:
         reader = csv.reader(file)
         next(reader)
         for row in reader:
@@ -91,7 +92,7 @@ def main():
     with ThreadPoolExecutor(max_workers=10) as executor:
         results = list(executor.map(process_url, school_data))
 
-    with open('../csv_files/3_directory_results.csv', 'w', newline='') as file:
+    with open('../csv_files/3_directory_urls.csv', 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(['Directory URL', 'Base URL', 'ID'])
         for result in results:

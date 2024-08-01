@@ -24,6 +24,8 @@ def main():
     links = read_from_csv('../csv_files/1_nces_urls.csv')
     size = len(links)
 
+    last_printed_percent = -1 
+
     for i, link in enumerate(links):
         try:
             driver.get(link)
@@ -34,25 +36,32 @@ def main():
                 url = url_element.get_attribute('href')
                 url = url[42:]
 
-                id_element = WebDriverWait(driver, 10).until(
+                id_element = WebDriverWait(driver, 2).until(
                     EC.presence_of_element_located((By.XPATH, '/html/body/div/div[1]/div[3]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[3]/font'))
                 )
                 id = id_element.text
-                data.add((url,id))
+
+                name_element = WebDriverWait(driver, 2).until(
+                    EC.presence_of_element_located((By.XPATH, '/html/body/div/div[1]/div[3]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[1]/font[2]'))
+                )
+                name = name_element.text
+
+                data.add((url,name,id))
             except (NoSuchElementException, TimeoutException, StaleElementReferenceException) as e:
                 logging.error(f"Could not find URL or ID at {link}: {e}")
         except Exception as e:
             logging.error(f"Could not get {url}: {e}")
-        announce_progress(i, size)
+        
+        last_printed_percent = announce_progress(i, size, last_printed_percent)
 
     data = list(data)
 
     with open('../csv_files/2_school_urls.csv', mode='w') as file:
         writer = csv.writer(file)
-        writer.writerow(['URL' , 'NCES ID'])
+        writer.writerow(['URL' , 'School Name', 'NCES ID'])
 
         for element in data:
-            writer.writerow([element[0],element[1]])
+            writer.writerow([element[0],element[1],element[2]])
 
     driver.quit()
     end_time(start)

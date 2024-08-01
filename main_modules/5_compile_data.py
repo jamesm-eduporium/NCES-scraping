@@ -32,7 +32,7 @@ def get_emails_from_file(file_path, all_emails):
 
 def main():
     start = start_time()
-    directory = '../all_site_text'
+    directory = '../all_site_html'
     emails = set()
 
     if not os.path.exists(directory):
@@ -48,9 +48,9 @@ def main():
     try:
         with open(output_file, mode='w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
-            writer.writerow(['Name','Titles','Emails'])
+            writer.writerow(['Name','Title(s)','Email','S'])
             for email in sorted(emails):
-                writer.writerow(['N/A','N/A',email])
+                writer.writerow(['','',email])
     except Exception as e:
         print(f"Error writing to file {output_file}: {e}")
 
