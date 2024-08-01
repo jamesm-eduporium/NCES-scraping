@@ -9,12 +9,13 @@ def main():
     with open('./data.csv','r') as file:
         
         reader = csv.reader(file)
+        next(reader)
         for row in reader:
-            if not row[0] == 'N/A' and not row[1] == 'N/A':
+            if not row[0] == '' and not row[1] == '':
                 num_complete = num_complete + 1
-            elif row[0] == 'N/A' and not row[1] == 'N/A':
+            elif row[0] == '' and not row[1] == '':
                 no_name = no_name + 1
-            elif not row[0] == 'N/A' and row[1] == 'N/A':
+            elif not row[0] == '' and row[1] == '':
                 no_title = no_title + 1
             else:
                 only_email = only_email + 1

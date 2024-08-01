@@ -16,6 +16,10 @@ def main():
             next(reader)
 
             for row in reader:
+                if row[0] == 'N/A':
+                    row[0] = ''
+                if row[1] == 'N/A':
+                    row[1] = ''
                 staff_member = {'name': row[0], 'title': row[1], 'email': row[2]}
                 all_data.append(staff_member)
     
