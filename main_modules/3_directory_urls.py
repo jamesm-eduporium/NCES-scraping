@@ -1,7 +1,4 @@
-import logging
-import requests
-import csv
-import datetime
+import logging, requests, csv
 from bs4 import BeautifulSoup
 from threading import Lock
 from concurrent.futures import ThreadPoolExecutor
@@ -84,7 +81,7 @@ def main():
         next(reader)
         for row in reader:
             school_data.append(row)
-    
+
     reset_log('./logs/3_directory_urls.log')
     logging.basicConfig(
         filename='./logs/3_directory_urls.log',

@@ -12,8 +12,8 @@ From the reference pages gathered in module 1, this module accesses each school'
 and URL (if it exists). Places them nicely in the CSV for them to flow down the rest of the system.
 
 Author: James McGillicuddy
-Runtime (HH:MM:SS): 
-Schools Accessed: 
+Runtime (HH:MM:SS): 118:10:15
+Schools Accessed: 68021
 """
 
 def main():
