@@ -1,7 +1,7 @@
 import requests, logging, os, csv
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
-from utilities import start_time, end_time, read_from_csv, reset_log, dynamic_location
+from utilities import start_time, end_time, reset_log
 """
 Module 6 is a stepping stone to the final step, accessing all of the accumulated staff 
 directories and pulling the entire html content of each site into its own .txt file for 
@@ -16,14 +16,14 @@ def write_to_file(data, content, index):
     os.makedirs('../all_site_html', exist_ok=True)
     file_path = os.path.join('../all_site_html', f'site_html_{index}.txt')
     with open(file_path, 'w', encoding='utf-8') as file:
-        file.write(f'Directory URL: {data[0]}\nBase URL: {data[1]}\nID: {data[2]}\n\n')
+        file.write(f'Directory URL: {data[0]}\nSchool Name: {data[1]}\nBase URL: {data[2]}\nID: {data[3]}\n\n')
         file.write(content)
 
 def process_url(index, data):
     try:
         response = requests.get(data[0])
         soup = BeautifulSoup(response.content, 'html.parser')
-        html_content = soup.prettify()  # Converts HTML to a nicely formatted string
+        html_content = soup.prettify()
         write_to_file(data, html_content, index)
     except Exception as e:
         logging.error(f"The url {data[0]} was not accessed, due to the following error: {e}")
@@ -36,7 +36,7 @@ def main():
         reader = csv.reader(file)
         next(reader)
         for row in reader:
-            data.append(row) # Directory URL, Base URL, ID
+            data.append(row) # Directory URL, School Name, Base URL, ID
     
     reset_log('./logs/4_staff_data.log')
     logging.basicConfig(

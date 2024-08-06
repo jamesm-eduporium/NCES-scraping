@@ -1,10 +1,10 @@
-import os
-from utilities import write_to_csv, start_time, end_time
+import os, csv
+from utilities import start_time, end_time
 
 def main():
     start = start_time()
     fs_pages = set()
-    directory = '../../all_site_source/'
+    directory = '../all_site_html/'
 
 
     for filename in os.listdir(directory):
@@ -12,12 +12,21 @@ def main():
             with open(file_path, 'r', encoding='utf-8') as file:
                 content = file.read()
                 if 'finalsite' in content:
-                    first_line = content.splitlines()[0]
-                    url = first_line[9:]
-                    fs_pages.add(url)
+                    lines = content.splitlines()
+                    directory_url = lines[0][15:]
+                    school_name = lines[1][13:]
+                    base_url = lines[2][10:]
+                    _id = lines[3][4:]
+                    fs_pages.add((directory_url,school_name,base_url,_id))
     
     fs_pages = list(fs_pages)
-    write_to_csv(fs_pages, '../fs_csvs/fs_page_urls.csv')
+    
+    with open('../fs_csvs/fs_page_urls.csv') as file:
+        writer = csv.writer(file)
+        writer.writerow(['Directory URL', 'School Name', 'Base URL', 'NCES ID'])
+        for page in fs_pages:
+             writer.writerow(page[0],page[1],page[2],page[3])
+    
     end_time(start)
 
 if __name__ == '__main__':

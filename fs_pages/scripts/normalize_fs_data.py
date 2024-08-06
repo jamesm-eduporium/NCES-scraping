@@ -20,22 +20,24 @@ def main():
         reader = csv.reader(file)
         next(reader)
         for row in reader:
-            if len(row) >= 3 and not (row[2] == 'N/A'):
+            if len(row) >= 3 and not (row[2] == ''):
                 cleaned_name = clean_name(row[0])
                 cleaned_titles = clean_titles(row[1])
                 
                 normalized_staff.append({
                     'name': cleaned_name,
                     'titles': cleaned_titles,
-                    'email': row[2]
+                    'email': row[2],
+                    'school name': row[3],
+                    'school id': row[4],
+                    'base url': row[5]
                 })
 
     with open('../fs_csvs/normalized_fs_data.csv', mode='w') as file:
         writer = csv.writer(file)
-        writer.writerow(['Name','Title(s)','Email'])
-
-        for staff_member in normalized_staff:
-            writer.writerow([staff_member['name'],staff_member['titles'],staff_member['email']])
+        writer.writerow(['Name','Title(s)','Email','School Name', 'NCES ID', 'School URL'])
+        for e in normalized_staff: 
+            writer.writerow([e['name'], e['titles'], e['email'], e['school name'], e['school id'], e['base url']]) 
 
     end_time(start)
 

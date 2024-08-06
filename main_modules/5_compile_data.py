@@ -20,20 +20,25 @@ def clean(email):
             return email[:index + len(domain)]
     return email
 
-def get_emails_from_file(file_path, all_emails):
+def get_data_from_file(file_path, all_data):
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
             content = file.read()
+            lines = content.splitlines()
+        school_name = lines[1].split(": ", 1)[1] if len(lines) > 1 else None
+        nces_id = lines[2].split(": ", 1)[1] if len(lines) > 2 else None
+        school_url = lines[3].split(": ", 1)[1] if len(lines) > 3 else None
         re_emails = re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', content)
-        cleaned_emails = [clean(email) for email in re_emails]
-        all_emails.update(cleaned_emails)
+        for email in re_emails:
+            email = clean(email)
+            all_data.add((email,school_name,nces_id,school_url))
     except Exception as e:
         print(f"Error reading file {file_path}: {e}")
 
 def main():
     start = start_time()
     directory = '../all_site_html'
-    emails = set()
+    data = set()
 
     if not os.path.exists(directory):
         print(f"Directory {directory} does not exist.")
@@ -42,15 +47,16 @@ def main():
     for filename in os.listdir(directory):
         file_path = os.path.join(directory, filename)
         if os.path.isfile(file_path):
-            get_emails_from_file(file_path, emails)
+            get_data_from_file(file_path, data)
 
+    print(list(data))
     output_file = './emails.csv'
     try:
         with open(output_file, mode='w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
-            writer.writerow(['Name','Title(s)','Email','S'])
-            for email in sorted(emails):
-                writer.writerow(['','',email])
+            writer.writerow(['Name','Title(s)','Email','School Name', 'NCES ID', 'School URL'])
+            for element in sorted(data):
+                writer.writerow(['','',element[0],element[1],element[2],element[3]]) # Can't get name and title reliably through this method, so left blank
     except Exception as e:
         print(f"Error writing to file {output_file}: {e}")
 

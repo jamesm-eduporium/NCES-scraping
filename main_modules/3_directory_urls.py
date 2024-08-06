@@ -1,7 +1,11 @@
-import logging, requests, csv
+import logging
+import requests
+import csv
+import datetime
 from bs4 import BeautifulSoup
+from threading import Lock
 from concurrent.futures import ThreadPoolExecutor
-from utilities import start_time, end_time, reset_log
+from utilities import start_time, end_time, reset_log, announce_progress
 
 """
 This module is quite different from the previous two, only using bs4 to process all 5883 school districts. 
@@ -63,11 +67,11 @@ def process_url(data):
 
     directory_url = search_by_url_manip(url)
     if directory_url:
-        return (directory_url, url, data[1])
-     
+        return (directory_url, data[1], url, data[2])
+    
     directory_url = search_by_keyword(html, url)
     if directory_url:
-        return (directory_url, url, data[1])
+        return (directory_url, data[1], url, data[2])
 
     logging.error(f"Could not find any access points at {url}")
     return None
@@ -88,13 +92,25 @@ def main():
         level=logging.ERROR,
         format='%(asctime)s:%(levelname)s:%(message)s'
     )
+    total = len(school_data)
+    progress_tracker = {'count': 0, 'last_printed_percent': -1}
+    lock = Lock()
+
+    def track_progress(data):
+        result = process_url(data)
+        with lock:
+            progress_tracker['count'] += 1
+            progress_tracker['last_printed_percent'] = announce_progress(
+                progress_tracker['count'], total, progress_tracker['last_printed_percent']
+            )
+        return result
 
     with ThreadPoolExecutor(max_workers=10) as executor:
-        results = list(executor.map(process_url, school_data))
+        results = list(executor.map(track_progress, school_data))
 
     with open('../csv_files/3_directory_urls.csv', 'w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['Directory URL', 'Base URL', 'ID'])
+        writer.writerow(['Directory URL', 'School Name', 'Base URL', 'ID'])
         for result in results:
             if result:
                 writer.writerow(result)

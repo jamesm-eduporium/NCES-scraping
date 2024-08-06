@@ -6,11 +6,13 @@ A simple utility file, used to prevent a lot of code duplication and to make man
 Author: James McGillicuddy
 """
 
-def announce_progress(current, total):
+def announce_progress(current, total, last_printed_percent):
     percent_complete = round((current / total) * 100, 2)
-    if percent_complete % 5 == 0:
-        current_time = datetime.datetime.now().strftime("%I:%M:%S %p")
+    if percent_complete % 1 == 0 and percent_complete != last_printed_percent:
+        current_time = datetime.datetime.now().strftime("%I:%M:%S %p on %m/%d/%y")
         print(f"{int(percent_complete)}% complete at {current_time}")
+        return percent_complete
+    return last_printed_percent
 
 def start_time():
     start_time = datetime.datetime.now()

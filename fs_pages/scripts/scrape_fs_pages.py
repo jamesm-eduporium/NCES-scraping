@@ -16,16 +16,16 @@ def flatten(s):
         flat = flat + line
     return flat
 
-def process_url(driver, url, staff_data):
+def process_url(driver, site, staff_data):
     try:
-        driver.get(url)
+        driver.get(site[0])
         while True:
             profiles = driver.find_elements(By.CLASS_NAME, 'fsConstituentItem')
 
             for profile in profiles:
-                name = 'N/A'
-                titles = 'N/A'
-                email = 'N/A'
+                name = ''
+                titles = ''
+                email = ''
 
                 try:
                     name_element = profile.find_element(By.CSS_SELECTOR, 'h3.fsFullName a')
@@ -48,7 +48,10 @@ def process_url(driver, url, staff_data):
                 staff_member = {
                     'name': name,
                     'titles': titles,
-                    'email': email 
+                    'email': email,
+                    'school name': site[1],
+                    'school id': site[3],
+                    'base url': site[2]
                 }
 
                 staff_data.append(staff_member)
@@ -61,25 +64,34 @@ def process_url(driver, url, staff_data):
                 break
 
     except Exception as e:
-        logging.error(f'Error processing URL {url}: {e}')
+        logging.error(f'Error processing URL {site[0]}: {e}')
     
 def main(): 
     start = start_time() 
     reset_log('../scraping.log')
-    staff_directories = read_from_csv('../fs_csvs/fs_page_urls.csv')
+    all_data = []
+    with open('../fs_csvs/fs_page_urls.csv') as file:
+        reader = csv.reader(file)
+        next(reader)
+        for row in reader:
+            all_data.append(row) # Directory URL, School Name, Base URL, NCES ID
+    
     staff_data = [] 
     chrome_options = Options() 
     chrome_options.add_argument("--headless") 
     chrome_options.add_argument("--no-sandbox") 
-    driver = webdriver.Chrome(options=chrome_options) 
-    for i, directory in enumerate(staff_directories): 
-        process_url(driver, directory, staff_data) 
-        announce_progress(i, len(staff_directories)) 
+    driver = webdriver.Chrome(options=chrome_options)
+
+    last_percentage = -1
+    for i, site in enumerate(all_data): 
+        process_url(driver, site, staff_data) 
+        last_percentage = announce_progress(i, len(all_data), last_percentage) 
+
     with open('../fs_csvs/fs_staff_data.csv', mode='w') as file: 
         writer = csv.writer(file) 
-        writer.writerow(['Name','Title(s)','Email']) 
-        for user in staff_data: 
-            writer.writerow([user['name'],user['titles'],user['email']]) 
+        writer.writerow(['Name','Title(s)','Email','School Name', 'NCES ID', 'School URL'])
+        for e in staff_data: 
+            writer.writerow([e['name'], e['titles'], e['email'], e['school name'], e['school id'], e['base url']]) 
     end_time(start)
     
 if __name__ == '__main__': 
