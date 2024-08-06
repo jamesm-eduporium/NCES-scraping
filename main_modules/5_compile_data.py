@@ -51,12 +51,14 @@ def main():
 
     print(list(data))
     output_file = './emails.csv'
+
     try:
         with open(output_file, mode='w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
             writer.writerow(['Name','Title(s)','Email','School Name', 'NCES ID', 'School URL'])
             for element in sorted(data):
                 writer.writerow(['','',element[0],element[1],element[2],element[3]]) # Can't get name and title reliably through this method, so left blank
+    
     except Exception as e:
         print(f"Error writing to file {output_file}: {e}")
 

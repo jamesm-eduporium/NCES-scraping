@@ -16,7 +16,7 @@ def write_to_file(data, content, index):
     os.makedirs('../all_site_html', exist_ok=True)
     file_path = os.path.join('../all_site_html', f'site_html_{index}.txt')
     with open(file_path, 'w', encoding='utf-8') as file:
-        file.write(f'Directory URL: {data[0]}\nSchool Name: {data[1]}\nBase URL: {data[2]}\nID: {data[3]}\n\n')
+        file.write(f'Directory URL: {data[0]}\nSchool Name: {data[1]}\nID: {data[2]}\nSchool URL: {data[3]}\n\n')
         file.write(content)
 
 def process_url(index, data):
@@ -36,7 +36,7 @@ def main():
         reader = csv.reader(file)
         next(reader)
         for row in reader:
-            data.append(row) # Directory URL, School Name, Base URL, ID
+            data.append(row) # Directory URL, School Name, ID, School URL
     
     reset_log('./logs/4_staff_data.log')
     logging.basicConfig(

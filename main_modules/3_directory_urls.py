@@ -67,11 +67,11 @@ def process_url(data):
 
     directory_url = search_by_url_manip(url)
     if directory_url:
-        return (directory_url, data[1], url, data[2])
+        return (directory_url, data[1], data[2], url)
     
     directory_url = search_by_keyword(html, url)
     if directory_url:
-        return (directory_url, data[1], url, data[2])
+        return (directory_url, data[1], data[2], url)
 
     logging.error(f"Could not find any access points at {url}")
     return None
@@ -110,7 +110,7 @@ def main():
 
     with open('../csv_files/3_directory_urls.csv', 'w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['Directory URL', 'School Name', 'Base URL', 'ID'])
+        writer.writerow(['Directory URL', 'School Name', 'ID', 'School URL'])
         for result in results:
             if result:
                 writer.writerow(result)
