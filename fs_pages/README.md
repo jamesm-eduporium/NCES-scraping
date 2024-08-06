@@ -1,7 +1,11 @@
 ## FS Page Scraping
 
-To look for 'FS Pages' as I will call them from here on out, I needed to find a common link between all of them. Using the site source I looked for the string 'finalsite' and stored the ones that contained it. That left me with 2838 possible Fs Pages. Since all of these pages have the same class names for the name, title, email, and next-page elements, it was simple to write one script that works for all of the staff directories.
+The fs in fs-pages stands for Finalsite, a customer relationship manager (CRM). When checking the HTML, `INSERT NUMBER OF SITES HERE` schools seemed to use Finalsite, by checking for the string 'finalsite' in their HTML source. This meant that all of those schools, for the most part, would have the exact same structure so I could build one system that is pretty much guarenteed to work on them.
 
-One problem with this is that all of the pages are dynamically loaded, which means not only do they have to be scraped synchronously using Selenium rather than BS4, it also requires page loading times to be met, requiring ~2 seconds per staff listing. This is referring to "Page 2 of 17", for example on each of the 2800 sites, so the two seconds add up very quickly. As of writing I have only ran the script to completetion once on an EC2 AWS server, and that took about half a week to complete. When completed though and after normalization, it resulted in `124,959` staff members. All of these staff member's emails were present, and more than half also had name and title present.
+This ended up being the case, and I used Selenium to check through every site and gather each staff member's name, title(s), and email. If the system failed to scrape any of them, it is a 99.99% chance that it was left blank by the school's site, which explains why so many of the staff member's data is not "complete". Feel free to check out the individual scripts to get some more specific documentation about them.
 
-Looking at the code, the `scrape_fs_pages.py` script does all the heavy lifting and the other three scripts exist to serve and clean its data. Optimization is possible but mostly in terms of speed rather than data collection, until schools decide to add the missing data of their staff members.
+- [Get FS Pages](./scripts/get_fs_pages.py)
+- [Scrape FS Pages](./scripts/scrape_fs_pages.py)
+- [Normalzie FS Pages](./scripts/normalize_fs_data.py)
+
+Click [here](../README.md) to head back to the main documentation.

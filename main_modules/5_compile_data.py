@@ -1,13 +1,14 @@
 import re, csv, os
 from utilities import start_time, end_time
-"""
-After accessing each pages' HTML content, Module 7 parses that content. It iterates through each txt file
-and finds all emails using regular expressions. 
 
-Emails found: 59920
-Runtime: ~7 Seconds
+"""
+After accessing each pages' HTML content, this module checks for any emails found in the site's html. This is more
+of a "bonus", as the fs modules generate more information in both number and type (including name, title). However,
+it takes practically nothing to run so why not gather <<<<<INSERT_NUMBER_HERE>>>>> emails even if they will not be used.
 
 Author: James McGillicuddy
+Runtime (HH:MM:SS): 
+Emails: 
 """
 
 def clean(email):

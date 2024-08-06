@@ -1,6 +1,16 @@
 import csv
 from utilities import start_time, end_time
 
+"""
+This normalizes the vast amount of data gained from the finalsite pages. It (barring some edge cases) formats all names and
+titles the same. It also discards any data points that do not contain an email, as that data is all but useless. From there it
+just places it back into a csv, ready to be compiled into the master list.
+
+Author: James McGillicuddy
+Runtime (HH:MM:SS): 
+Normalized Staff Members: 
+"""
+
 def clean_name(name):
     name = name.title()
     return name

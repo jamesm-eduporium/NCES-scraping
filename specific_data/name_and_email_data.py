@@ -1,6 +1,5 @@
 import csv
 
-
 """
 This easy script compiles all data points that contain at least the name and email. Most will actually
 contain the title as well, but not all. They are however guarenteed to have their name and email
@@ -8,7 +7,7 @@ contain the title as well, but not all. They are however guarenteed to have thei
 
 def main():
     complete = []
-    with open('../data.csv', mode='r') as file:
+    with open('../final_data.csv', mode='r') as file:
         reader = csv.reader(file)
         next(reader)
         for row in reader:

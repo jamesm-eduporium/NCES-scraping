@@ -7,6 +7,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from utilities import read_from_csv, start_time, end_time, announce_progress, reset_log
 
+"""
+From the reference pages gathered in module 1, this module accesses each school's NCES site, grabs their unique id, school name,
+and URL (if it exists). Places them nicely in the CSV for them to flow down the rest of the system.
+
+Author: James McGillicuddy
+Runtime (HH:MM:SS): 
+Schools Accessed: 
+"""
 
 def main():
     start = start_time()

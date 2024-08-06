@@ -2,7 +2,18 @@ import logging, csv, time
 from selenium import webdriver 
 from selenium.webdriver.common.by import By 
 from selenium.webdriver.chrome.options import Options
-from utilities import start_time, end_time, read_from_csv, reset_log, announce_progress
+from utilities import start_time, end_time, reset_log, announce_progress
+
+"""
+Here's the money-maker. This script goes through all of the previously found fs_pages and iterates through each page
+of staff at the site, storing the member's name, title, and email if they exist. This is also the longest module in
+the system, as these sites take a second or so to load. Those few seconds add up quickly. Nevertheless, it gathers
+all data eventually, resulting in the most useful lead generation of the entire system.
+
+Author: James McGillicuddy
+Runtime (HH:MM:SS): 
+Staff Members Accessed: 
+"""
 
 logging.basicConfig( 
     filename='scraping.log', 

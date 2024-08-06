@@ -17,7 +17,6 @@ Runtime (HH:MM:SS): 02:05:29
 Reference Pages: 100667
 """
 
-
 def main():
     start = start_time()
     reset_log('./logs/1_nces_urls.log')

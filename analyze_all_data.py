@@ -1,12 +1,19 @@
 import csv
 
+"""
+This is a quick and easy way to see some basic numbers about the data. Just shows what data
+is complete and what data is missing, etc. Very basic.
+
+Author: James McGillicuddy
+"""
+
 def main():
     num_complete = 0
     no_name = 0
     no_title = 0
     only_email = 0
     length = 0
-    with open('./data.csv','r') as file:
+    with open('./final_data.csv','r') as file:
         
         reader = csv.reader(file)
         next(reader)
@@ -26,7 +33,7 @@ def main():
     title_percentage = (round(no_title/length * 100, 5)) 
     email_percentage = (round(only_email/length * 100, 5)) 
 
-    print(f'The number of staff members with complete data (name, title(s), email) is {num_complete}, or {complete_pecentage}%')
+    print(f'The number of staff members with complete data (name, title(s), email, etc) is {num_complete}, or {complete_pecentage}%')
     print(f'The number of staff members missing their name is {no_name}, or {name_percentage}%')
     print(f'The number of staff members missing their title is {no_title}, or {title_percentage}%')
     print(f'The number of staff members that only have their email is {only_email}, or {email_percentage}%')

@@ -2,16 +2,19 @@ import requests, logging, os, csv
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
 from utilities import start_time, end_time, reset_log
-"""
-Module 6 is a stepping stone to the final step, accessing all of the accumulated staff 
-directories and pulling the entire html content of each site into its own .txt file for 
-parsing in the next module.
 
-School HTML Pages Stored: 13,397
-Runtime: ~ 26 Minutes // 515.269 source pages per minute
+"""
+This module pulls all of the html content of the previously discovered staff pages and stores them in a seperate directory.
+The previous data is written in a header so that it can be read by other modules and preserved throughout data transfer.
+Html is stored to parse emails from all content, but more importantly to search for any sites using the finalsite client
+relationship management (CRM) model. These sites are then passed to the 'fs_pages' directory where the majority of lead
+generation takes place.
 
 Author: James McGillicuddy
+Runtime (HH:MM:SS): 
+Sites Pulled: 
 """
+
 def write_to_file(data, content, index):
     os.makedirs('../all_site_html', exist_ok=True)
     file_path = os.path.join('../all_site_html', f'site_html_{index}.txt')

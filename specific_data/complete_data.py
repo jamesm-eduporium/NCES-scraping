@@ -1,6 +1,5 @@
 import csv
 
-
 """
 This easy script compiles all data points that are complete (contain name, title(s), email)
 into one csv file, skipping any that miss any sort of data.
@@ -8,7 +7,7 @@ into one csv file, skipping any that miss any sort of data.
 
 def main():
     complete = []
-    with open('../data.csv', mode='r') as file:
+    with open('../final_data.csv', mode='r') as file:
         reader = csv.reader(file)
         next(reader)
         for row in reader:

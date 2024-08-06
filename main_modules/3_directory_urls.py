@@ -8,15 +8,14 @@ from concurrent.futures import ThreadPoolExecutor
 from utilities import start_time, end_time, reset_log, announce_progress
 
 """
-This module is quite different from the previous two, only using bs4 to process all 5883 school districts. 
-Using concurrency, the module is able to find school directories for just under half of all districts. The
-initial problem was the vast number of domains being accessed, and the variety of design in them. By using
-concurreny, and a variety of methods to try to locate the school directory, large improvements were made.
-
-School Directory Sites: 11827
-Runtime: ~1 Hour 5 Minutes // 246.8 district links per minute
+This module is quite different from the previous two, only using bs4 to process all schoos. Using concurrency, 
+the module is able to find staff directories at a much faster speed. First the system tries to manipulate the URL
+to access staff directories, using common routes like /staff. If that doesn't work, it checks for any reference
+links on the base page that could lead to a staff page. If that doesn't work, the link is discarded.
 
 Author: James McGillicuddy
+Runtime (HH:MM:SS): 
+Directories: 
 """
 
 def fetch_url(url):
