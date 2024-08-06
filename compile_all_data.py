@@ -6,7 +6,7 @@ def main():
     # Place name of files in this list
     csv_files = [
         './main_modules/emails.csv',
-        './fs_pages/normalized_fs_data.csv'
+        './fs_pages/fs_csvs/normalized_fs_data.csv'
     ]
     
 
@@ -16,19 +16,15 @@ def main():
             next(reader)
 
             for row in reader:
-                if row[0] == 'N/A':
-                    row[0] = ''
-                if row[1] == 'N/A':
-                    row[1] = ''
-                staff_member = {'name': row[0], 'title': row[1], 'email': row[2]}
+                staff_member = {'name': row[0], 'title': row[1], 'email': row[2], 'school name': row[3], 'school id': row[4], 'base url': row[5]}
                 all_data.append(staff_member)
     
     with open('./data.csv', 'w') as file:
         writer = csv.writer(file)
-        writer.writerow(['Name', 'Title(s)', 'Email'])
+        writer.writerow(['Name', 'Title(s)', 'Email', 'School Name', 'NCES ID', 'School URL'])
 
         for s in all_data:
-            writer.writerow([s['name'],s['title'],s['email']])
+            writer.writerow([s['name'],s['title'],s['email'],s['school name'],s['school id'], s['base url']])
 
 
 

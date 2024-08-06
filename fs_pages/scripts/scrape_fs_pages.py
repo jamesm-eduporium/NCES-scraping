@@ -50,8 +50,8 @@ def process_url(driver, site, staff_data):
                     'titles': titles,
                     'email': email,
                     'school name': site[1],
-                    'school id': site[3],
-                    'base url': site[2]
+                    'school id': site[2],
+                    'base url': site[3]
                 }
 
                 staff_data.append(staff_member)
@@ -74,7 +74,7 @@ def main():
         reader = csv.reader(file)
         next(reader)
         for row in reader:
-            all_data.append(row) # Directory URL, School Name, Base URL, NCES ID
+            all_data.append(row) # Directory URL, School Name, NCES ID, Base URL
     
     staff_data = [] 
     chrome_options = Options() 

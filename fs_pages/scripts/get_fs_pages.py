@@ -15,15 +15,15 @@ def main():
                     lines = content.splitlines()
                     directory_url = lines[0][15:]
                     school_name = lines[1][13:]
-                    base_url = lines[2][10:]
-                    _id = lines[3][4:]
-                    fs_pages.add((directory_url,school_name,base_url,_id))
+                    _id = lines[2][10:]
+                    base_url = lines[3][4:]
+                    fs_pages.add((directory_url, school_name, _id, base_url))
     
     fs_pages = list(fs_pages)
-    
+
     with open('../fs_csvs/fs_page_urls.csv') as file:
         writer = csv.writer(file)
-        writer.writerow(['Directory URL', 'School Name', 'Base URL', 'NCES ID'])
+        writer.writerow(['Directory URL', 'School Name', 'NCES ID', 'School URL'])
         for page in fs_pages:
              writer.writerow(page[0],page[1],page[2],page[3])
     
